@@ -382,6 +382,89 @@
             font-size: 1.1rem;
             grid-column: 1 / -1;
         }
+        
+        /* Мобильные контролы */
+        .mobile-controls-bar {
+            display: none;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(35, 26, 22, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 10px;
+            margin: 0 -10px;
+            border-bottom: 1px solid #443A30;
+        }
+        .mobile-controls-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .mobile-controls-bar .btn {
+            flex: 1;
+            padding: 12px;
+            font-size: 14px;
+        }
+        
+        /* Модальное окно фильтров */
+        .filters-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .filters-modal-content {
+            background: #231A16;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .filters-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #443A30;
+        }
+        .filters-modal-header h2 {
+            color: #E8DCC5;
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .close-filters {
+            background: none;
+            border: none;
+            color: #E8DCC5;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .filters-modal-body {
+            padding-bottom: 80px;
+        }
+        .apply-filters-btn {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(35, 26, 22, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #443A30;
+        }
+        .apply-filters-btn .btn {
+            width: 100%;
+        }
+        
         /* Адаптивность */
         @media (max-width: 1200px) {
             .cars-grid {
@@ -394,15 +477,15 @@
                 gap: 15px;
             }
             .filters-sidebar {
-                position: static;
-                margin-bottom: 20px;
-                margin-left: 10px;
-                margin-right: 10px;
+                display: none;
             }
             .cars-grid {
                 grid-template-columns: repeat(2, 1fr);
                 margin-left: 10px;
                 margin-right: 10px;
+            }
+            .mobile-controls-bar {
+                display: block;
             }
         }
         @media (max-width: 768px) {
@@ -427,11 +510,6 @@
             }
             .catalog-content {
                 padding: 10px 0 40px;
-            }
-            .filters-sidebar {
-                margin-left: 5px;
-                margin-right: 5px;
-                padding: 15px;
             }
             .cars-grid {
                 margin-left: 5px;
@@ -516,6 +594,14 @@
         </div>
     </header>
     <div class="container">
+        <!-- Мобильные контролы -->
+        <div class="mobile-controls-bar">
+            <div class="mobile-controls-buttons">
+                <button class="btn btn-primary mobile-filter-btn" onclick="openFiltersModal()">Фильтры</button>
+                <button class="btn btn-secondary mobile-sort-btn" onclick="openSortModal()">Сортировка</button>
+            </div>
+        </div>
+        
         <div class="catalog-content">
             <!-- Боковая панель фильтров -->
             <aside class="filters-sidebar">
@@ -621,6 +707,23 @@
             </main>
         </div>
     </div>
+    
+    <!-- Модальное окно фильтров для мобильных -->
+    <div class="filters-modal" id="filtersModal">
+        <div class="filters-modal-content">
+            <div class="filters-modal-header">
+                <h2>Фильтры</h2>
+                <button class="close-filters" onclick="closeFiltersModal()">×</button>
+            </div>
+            <div class="filters-modal-body" id="filtersModalBody">
+                <!-- Содержимое фильтров будет скопировано из aside -->
+            </div>
+            <div class="apply-filters-btn">
+                <button class="btn btn-primary" onclick="applyFiltersAndClose()">Применить фильтры</button>
+            </div>
+        </div>
+    </div>
+    
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -649,6 +752,7 @@
         let currentPage = 1;
         const carsPerPage = 30; // 3 колонки × 10 рядов
         let currentFilters = {};
+        
         // Загрузка данных
         async function loadCarsData() {
             try {
@@ -661,6 +765,7 @@
                     '<div class="no-results">Ошибка загрузки данных. Пожалуйста, попробуйте позже.</div>';
             }
         }
+        
         // Инициализация каталога
         function initCatalog() {
             filteredCars = [...allCars];
@@ -668,6 +773,106 @@
             renderFilters();
             renderCars();
             setupPagination();
+            initMobileFilters();
+        }
+        
+        // Инициализация мобильных фильтров
+        function initMobileFilters() {
+            // Копируем содержимое фильтров в модальное окно
+            const filtersSidebar = document.querySelector('.filters-sidebar');
+            const filtersModalBody = document.getElementById('filtersModalBody');
+            if (filtersSidebar && filtersModalBody) {
+                filtersModalBody.innerHTML = filtersSidebar.innerHTML;
+                
+                // Добавляем обработчики событий для фильтров в модальном окне
+                const filterInputs = filtersModalBody.querySelectorAll('input[type="checkbox"], input[type="number"], input[type="date"]');
+                filterInputs.forEach(input => {
+                    if (input.type === 'checkbox' || input.type === 'number') {
+                        input.addEventListener('change', handleFilterChange);
+                    } else if (input.type === 'date') {
+                        input.addEventListener('change', handleDateChange);
+                        input.addEventListener('blur', handleDateChange);
+                    }
+                });
+                
+                // Обработчик для кнопки сброса фильтров в модальном окне
+                const clearFiltersBtn = filtersModalBody.querySelector('.clear-filters');
+                if (clearFiltersBtn) {
+                    clearFiltersBtn.addEventListener('click', clearAllFilters);
+                }
+            }
+        }
+        
+        // Открытие модального окна фильтров
+        function openFiltersModal() {
+            document.getElementById('filtersModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Синхронизируем состояние фильтров в модальном окне с основными фильтрами
+            syncFiltersToModal();
+        }
+        
+        // Закрытие модального окна фильтров
+        function closeFiltersModal() {
+            document.getElementById('filtersModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Применение фильтров и закрытие модального окна
+        function applyFiltersAndClose() {
+            // Синхронизируем состояние фильтров из модального окна в основные
+            syncFiltersFromModal();
+            applyFilters();
+            closeFiltersModal();
+        }
+        
+        // Синхронизация фильтров в модальное окно
+        function syncFiltersToModal() {
+            const mainFilters = document.querySelector('.filters-sidebar');
+            const modalFilters = document.getElementById('filtersModalBody');
+            
+            if (!mainFilters || !modalFilters) return;
+            
+            // Копируем значения всех инпутов из основных фильтров в модальные
+            const mainInputs = mainFilters.querySelectorAll('input');
+            const modalInputs = modalFilters.querySelectorAll('input');
+            
+            mainInputs.forEach((mainInput, index) => {
+                if (modalInputs[index]) {
+                    if (mainInput.type === 'checkbox') {
+                        modalInputs[index].checked = mainInput.checked;
+                    } else {
+                        modalInputs[index].value = mainInput.value;
+                    }
+                }
+            });
+        }
+        
+        // Синхронизация фильтров из модального окна
+        function syncFiltersFromModal() {
+            const mainFilters = document.querySelector('.filters-sidebar');
+            const modalFilters = document.getElementById('filtersModalBody');
+            
+            if (!mainFilters || !modalFilters) return;
+            
+            // Копируем значения всех инпутов из модальных фильтров в основные
+            const mainInputs = mainFilters.querySelectorAll('input');
+            const modalInputs = modalFilters.querySelectorAll('input');
+            
+            modalInputs.forEach((modalInput, index) => {
+                if (mainInputs[index]) {
+                    if (modalInput.type === 'checkbox') {
+                        mainInputs[index].checked = modalInput.checked;
+                    } else {
+                        mainInputs[index].value = modalInput.value;
+                    }
+                }
+            });
+        }
+        
+        // Открытие модального окна сортировки (заглушка)
+        function openSortModal() {
+            alert('Функция сортировки будет добавлена в ближайшее время');
         }
         
         // Установка дат по умолчанию (сегодня и завтра)
