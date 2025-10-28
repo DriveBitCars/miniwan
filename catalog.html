@@ -414,6 +414,70 @@
                 padding: 15px;
                 margin: 0 10px 20px;
             }
+            /* Компактные даты в одну строку */
+.mobile-date-inputs-compact {
+    display: flex;
+    gap: 8px;
+}
+.mobile-date-inputs-compact input[type="date"] {
+    flex: 1;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #8B5A2B;
+    border-radius: 5px;
+    color: #333;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+}
+
+/* Компактные марки галочками в три колонки */
+.mobile-brands-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+.mobile-brand-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #D4C4A8;
+}
+.mobile-brand-checkbox input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: #8B5A2B;
+}
+
+/* Компактная цена в одну строку */
+.mobile-price-inputs-compact {
+    display: flex;
+    gap: 8px;
+}
+.mobile-price-inputs-compact input {
+    flex: 1;
+    padding: 8px;
+    background: rgba(35, 26, 22, 0.8);
+    border: 1px solid #8B5A2B;
+    border-radius: 5px;
+    color: #F0E6D2;
+    font-size: 0.8rem;
+}
+
+/* Компактные годы в одну строку */
+.mobile-year-inputs-compact {
+    display: flex;
+    gap: 8px;
+}
+.mobile-year-inputs-compact input {
+    flex: 1;
+    padding: 8px;
+    background: rgba(35, 26, 22, 0.8);
+    border: 1px solid #8B5A2B;
+    border-radius: 5px;
+    color: #F0E6D2;
+    font-size: 0.8rem;
+}
             /* Компактные стили для мобильных фильтров */
             .mobile-filter-group {
                 margin-bottom: 15px;
@@ -804,20 +868,40 @@
                     <button class="clear-filters" onclick="clearAllMobileFilters()">Сбросить все</button>
                 </div>
                 
-                <!-- Компактные даты -->
-                <div class="mobile-filter-group">
-                    <h3>Период аренды</h3>
-                    <div class="mobile-date-inputs">
-                        <div class="mobile-date-input-group">
-                            <label for="mobileStartDate">С</label>
-                            <input type="date" id="mobileStartDate" onchange="handleMobileDateChange()">
-                        </div>
-                        <div class="mobile-date-input-group">
-                            <label for="mobileEndDate">По</label>
-                            <input type="date" id="mobileEndDate" onchange="handleMobileDateChange()">
-                        </div>
-                    </div>
-                </div>
+<!-- Компактные даты в одну строку -->
+<div class="mobile-filter-group">
+    <h3>Период аренды</h3>
+    <div class="mobile-date-inputs-compact">
+        <input type="date" id="mobileStartDate" onchange="handleMobileDateChange()">
+        <input type="date" id="mobileEndDate" onchange="handleMobileDateChange()">
+    </div>
+</div>
+
+<!-- Компактные марки в три колонки -->
+<div class="mobile-filter-group">
+    <h3>Марка</h3>
+    <div class="mobile-brands-checkboxes" id="mobileBrandFilter">
+        <!-- Динамически заполняется через JS -->
+    </div>
+</div>
+
+<!-- Компактная цена в одну строку -->
+<div class="mobile-filter-group">
+    <h3>Цена за день</h3>
+    <div class="mobile-price-inputs-compact">
+        <input type="number" id="mobileMinPrice" placeholder="От" min="0" onchange="handleMobileFilterChange()">
+        <input type="number" id="mobileMaxPrice" placeholder="До" min="0" onchange="handleMobileFilterChange()">
+    </div>
+</div>
+
+<!-- Компактные годы в одну строку -->
+<div class="mobile-filter-group">
+    <h3>Год выпуска</h3>
+    <div class="mobile-year-inputs-compact">
+        <input type="number" id="mobileMinYear" placeholder="От" min="2000" max="2030" onchange="handleMobileFilterChange()">
+        <input type="number" id="mobileMaxYear" placeholder="До" min="2000" max="2030" onchange="handleMobileFilterChange()">
+    </div>
+</div>
                 
                 <!-- Компактные марки -->
                 <div class="mobile-filter-group">
@@ -996,19 +1080,19 @@
             }).join('');
         }
         
-        function renderMobileBrandFilter() {
-            const brands = [...new Set(allCars.map(car => car.brand))].sort();
-            const container = document.getElementById('mobileBrandFilter');
-            container.innerHTML = brands.map(brand => {
-                const count = allCars.filter(car => car.brand === brand).length;
-                return `
-                    <button class="mobile-brand-btn" data-brand="${brand}" onclick="toggleMobileBrand('${brand}')">
-                        <span class="brand-name">${brand}</span>
-                        <span class="brand-count">${count}</span>
-                    </button>
-                `;
-            }).join('');
-        }
+function renderMobileBrandFilter() {
+    const brands = [...new Set(allCars.map(car => car.brand))].sort();
+    const container = document.getElementById('mobileBrandFilter');
+    container.innerHTML = brands.map(brand => {
+        const count = allCars.filter(car => car.brand === brand).length;
+        return `
+            <div class="mobile-brand-checkbox">
+                <input type="checkbox" id="mobile-brand-${brand}" value="${brand}" onchange="handleMobileFilterChange()">
+                <label for="mobile-brand-${brand}">${brand}</label>
+            </div>
+        `;
+    }).join('');
+}
         
         function renderYearFilter() {
             const years = [...new Set(allCars.map(car => car.year))].sort((a, b) => b - a);
@@ -1177,55 +1261,24 @@
             return labels[range];
         }
         
-        // Функции для мобильных фильтров
-        function toggleMobileBrand(brand) {
-            const btn = document.querySelector(`.mobile-brand-btn[data-brand="${brand}"]`);
-            btn.classList.toggle('active');
-            syncMobileFiltersToMain();
-            applyFilters();
-        }
-        
-        function toggleMobileYear(year) {
-            const btn = document.querySelector(`.mobile-year-btn[data-year="${year}"]`);
-            btn.classList.toggle('active');
-            syncMobileFiltersToMain();
-            applyFilters();
-        }
-        
-        function toggleMobileSeats(seats) {
-            const btn = document.querySelector(`.mobile-seat-btn[data-seats="${seats}"]`);
-            btn.classList.toggle('active');
-            syncMobileFiltersToMain();
-            applyFilters();
-        }
-        
-        function toggleMobileTransmission(transmission) {
-            const btn = document.querySelector(`.mobile-filter-btn[data-transmission="${transmission}"]`);
-            btn.classList.toggle('active');
-            syncMobileFiltersToMain();
-            applyFilters();
-        }
-        
-        function toggleMobileFuel(fuel) {
-            const btn = document.querySelector(`.mobile-filter-btn[data-fuel="${fuel}"]`);
-            btn.classList.toggle('active');
-            syncMobileFiltersToMain();
-            applyFilters();
-        }
+
         
         // Синхронизация мобильных фильтров с основными
-        function syncMobileFiltersToMain() {
-            // Бренды
-            const activeBrands = document.querySelectorAll('.mobile-brand-btn.active');
-            document.querySelectorAll('#brandFilter input[type="checkbox"]').forEach(checkbox => {
-                checkbox.checked = Array.from(activeBrands).some(btn => btn.dataset.brand === checkbox.value);
-            });
-            
-            // Годы
-            const activeYears = document.querySelectorAll('.mobile-year-btn.active');
-            document.querySelectorAll('#yearFilter input[type="checkbox"]').forEach(checkbox => {
-                checkbox.checked = Array.from(activeYears).some(btn => btn.dataset.year === checkbox.value);
-            });
+function syncMobileFiltersToMain() {
+    // Бренды
+    const mobileBrandCheckboxes = document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]');
+    document.querySelectorAll('#brandFilter input[type="checkbox"]').forEach(checkbox => {
+        const mobileCheckbox = Array.from(mobileBrandCheckboxes).find(mcb => mcb.value === checkbox.value);
+        checkbox.checked = mobileCheckbox ? mobileCheckbox.checked : false;
+    });
+    
+    // Цена
+    document.getElementById('minPrice').value = document.getElementById('mobileMinPrice').value;
+    document.getElementById('maxPrice').value = document.getElementById('mobileMaxPrice').value;
+    
+    // Даты
+    document.getElementById('startDate').value = document.getElementById('mobileStartDate').value;
+    document.getElementById('endDate').value = document.getElementById('mobileEndDate').value;
             
             // Места
             const activeSeats = document.querySelectorAll('.mobile-seat-btn.active');
