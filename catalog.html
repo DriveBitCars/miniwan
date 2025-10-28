@@ -1242,38 +1242,12 @@ function renderMobileBrandFilter() {
 
         
         // Синхронизация мобильных фильтров с основными
-function syncMobileFiltersToMain() {
-    // Бренды
-    const mobileBrandCheckboxes = document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]');
-    document.querySelectorAll('#brandFilter input[type="checkbox"]').forEach(checkbox => {
-        const mobileCheckbox = Array.from(mobileBrandCheckboxes).find(mcb => mcb.value === checkbox.value);
-        checkbox.checked = mobileCheckbox ? mobileCheckbox.checked : false;
-    });
-    
-    // Цена
-    document.getElementById('minPrice').value = document.getElementById('mobileMinPrice').value;
-    document.getElementById('maxPrice').value = document.getElementById('mobileMaxPrice').value;
-    
-    // Даты
-    document.getElementById('startDate').value = document.getElementById('mobileStartDate').value;
-    document.getElementById('endDate').value = document.getElementById('mobileEndDate').value;
-            
-            // Места
-            const activeSeats = document.querySelectorAll('.mobile-seat-btn.active');
-            document.querySelectorAll('#seatsFilter input[type="checkbox"]').forEach(checkbox => {
-                checkbox.checked = Array.from(activeSeats).some(btn => btn.dataset.seats === checkbox.value);
-            });
-            
-            // Коробка передач
-            const activeTransmissions = document.querySelectorAll('.mobile-filter-btn[data-transmission].active');
-            document.querySelectorAll('#transmissionFilter input[type="checkbox"]').forEach(checkbox => {
-                checkbox.checked = Array.from(activeTransmissions).some(btn => btn.dataset.transmission === checkbox.value);
-            });
-            
-            // Топливо
-            const activeFuels = document.querySelectorAll('.mobile-filter-btn[data-fuel].active');
-            document.querySelectorAll('#fuelFilter input[type="checkbox"]').forEach(checkbox => {
-                checkbox.checked = Array.from(activeFuels).some(btn => btn.dataset.fuel === checkbox.value);
+        function syncMobileFiltersToMain() {
+            // Бренды
+            const mobileBrandCheckboxes = document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]');
+            document.querySelectorAll('#brandFilter input[type="checkbox"]').forEach(checkbox => {
+                const mobileCheckbox = Array.from(mobileBrandCheckboxes).find(mcb => mcb.value === checkbox.value);
+                checkbox.checked = mobileCheckbox ? mobileCheckbox.checked : false;
             });
             
             // Цена
@@ -1287,21 +1261,20 @@ function syncMobileFiltersToMain() {
         
         // Синхронизация основных фильтров с мобильными
         function syncMainFiltersToMobile() {
-       function syncMainFiltersToMobile() {
-    // Бренды
-    const checkedBrands = document.querySelectorAll('#brandFilter input[type="checkbox"]:checked');
-    document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = Array.from(checkedBrands).some(cb => cb.value === checkbox.value);
-    });
-    
-    // Цена
-    document.getElementById('mobileMinPrice').value = document.getElementById('minPrice').value;
-    document.getElementById('mobileMaxPrice').value = document.getElementById('maxPrice').value;
-    
-    // Даты
-    document.getElementById('mobileStartDate').value = document.getElementById('startDate').value;
-    document.getElementById('mobileEndDate').value = document.getElementById('endDate').value;
-}
+            // Бренды
+            const checkedBrands = document.querySelectorAll('#brandFilter input[type="checkbox"]:checked');
+            document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = Array.from(checkedBrands).some(cb => cb.value === checkbox.value);
+            });
+            
+            // Цена
+            document.getElementById('mobileMinPrice').value = document.getElementById('minPrice').value;
+            document.getElementById('mobileMaxPrice').value = document.getElementById('maxPrice').value;
+            
+            // Даты
+            document.getElementById('mobileStartDate').value = document.getElementById('startDate').value;
+            document.getElementById('mobileEndDate').value = document.getElementById('endDate').value;
+        }
             
             // Места
             const checkedSeats = document.querySelectorAll('#seatsFilter input[type="checkbox"]:checked');
