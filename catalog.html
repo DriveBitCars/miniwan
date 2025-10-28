@@ -383,86 +383,140 @@
             grid-column: 1 / -1;
         }
         
-        /* Мобильные контролы */
-        .mobile-controls-bar {
+        /* Мобильные стили для компактных фильтров */
+        .mobile-compact-filters {
             display: none;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(35, 26, 22, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 10px;
-            margin: 0 -10px;
-            border-bottom: 1px solid #443A30;
-        }
-        .mobile-controls-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .mobile-controls-bar .btn {
-            flex: 1;
-            padding: 12px;
-            font-size: 14px;
         }
         
-        /* Модальное окно фильтров */
-        .filters-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            overflow-y: auto;
-        }
-        .filters-modal-content {
-            background: #231A16;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .filters-modal-header {
+        /* Компактные даты в одну строку */
+        .mobile-date-inputs-compact {
             display: flex;
-            justify-content: space-between;
+            gap: 8px;
+        }
+        .mobile-date-inputs-compact input[type="date"] {
+            flex: 1;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #8B5A2B;
+            border-radius: 5px;
+            color: #333;
+            font-size: 0.8rem;
+            box-sizing: border-box;
+        }
+
+        /* Компактные марки галочками в три колонки */
+        .mobile-brands-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .mobile-brand-checkbox {
+            display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: #D4C4A8;
+        }
+        .mobile-brand-checkbox input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+            accent-color: #8B5A2B;
+        }
+
+        /* Компактная цена в одну строку */
+        .mobile-price-inputs-compact {
+            display: flex;
+            gap: 8px;
+        }
+        .mobile-price-inputs-compact input {
+            flex: 1;
+            padding: 8px;
+            background: rgba(35, 26, 22, 0.8);
+            border: 1px solid #8B5A2B;
+            border-radius: 5px;
+            color: #F0E6D2;
+            font-size: 0.8rem;
+        }
+
+        /* Компактные годы в одну строку */
+        .mobile-year-inputs-compact {
+            display: flex;
+            gap: 8px;
+        }
+        .mobile-year-inputs-compact input {
+            flex: 1;
+            padding: 8px;
+            background: rgba(35, 26, 22, 0.8);
+            border: 1px solid #8B5A2B;
+            border-radius: 5px;
+            color: #F0E6D2;
+            font-size: 0.8rem;
+        }
+
+        /* Компактные стили для мобильных фильтров */
+        .mobile-filter-group {
+            margin-bottom: 15px;
             padding-bottom: 15px;
             border-bottom: 1px solid #443A30;
         }
-        .filters-modal-header h2 {
-            color: #E8DCC5;
-            margin: 0;
-            font-size: 1.3rem;
+        .mobile-filter-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
         }
-        .close-filters {
-            background: none;
-            border: none;
+        .mobile-filter-group h3 {
             color: #E8DCC5;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 0;
-            width: 30px;
-            height: 30px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* Компактные места в одну строку */
+        .mobile-seats-row {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 8px;
         }
-        .filters-modal-body {
-            padding-bottom: 80px;
+        .mobile-seat-btn {
+            flex: 1;
+            padding: 8px 4px;
+            background: rgba(35, 26, 22, 0.8);
+            border: 1px solid #8B5A2B;
+            border-radius: 5px;
+            color: #D4C4A8;
+            cursor: pointer;
+            font-size: 0.75rem;
+            text-align: center;
+            transition: all 0.3s;
         }
-        .apply-filters-btn {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background: rgba(35, 26, 22, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid #443A30;
+        .mobile-seat-btn.active {
+            background: #8B5A2B;
+            color: white;
         }
-        .apply-filters-btn .btn {
-            width: 100%;
+        .mobile-seat-btn:hover {
+            background: rgba(139, 90, 43, 0.3);
+        }
+
+        /* Остальные фильтры в 2 колонки */
+        .mobile-other-filters {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .mobile-filter-btn {
+            padding: 8px 4px;
+            background: rgba(35, 26, 22, 0.8);
+            border: 1px solid #8B5A2B;
+            border-radius: 5px;
+            color: #D4C4A8;
+            cursor: pointer;
+            font-size: 0.75rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .mobile-filter-btn.active {
+            background: #8B5A2B;
+            color: white;
+        }
+        .mobile-filter-btn:hover {
+            background: rgba(139, 90, 43, 0.3);
         }
         
         /* Адаптивность */
@@ -484,8 +538,12 @@
                 margin-left: 10px;
                 margin-right: 10px;
             }
-            .mobile-controls-bar {
+            .mobile-compact-filters {
                 display: block;
+                background: rgba(40, 30, 25, 0.8);
+                border-radius: 10px;
+                padding: 15px;
+                margin: 0 10px 20px;
             }
         }
         @media (max-width: 768px) {
@@ -500,6 +558,13 @@
             .car-image {
                 height: 220px;
             }
+            /* Еще более компактные стили для очень маленьких экранов */
+            .mobile-brands-checkboxes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .mobile-other-filters {
+                grid-template-columns: 1fr;
+            }
         }
         @media (max-width: 480px) {
             .container {
@@ -511,6 +576,10 @@
             .catalog-content {
                 padding: 10px 0 40px;
             }
+            .mobile-compact-filters {
+                margin: 0 5px 15px;
+                padding: 12px;
+            }
             .cars-grid {
                 margin-left: 5px;
                 margin-right: 5px;
@@ -518,6 +587,18 @@
             }
             .car-image {
                 height: 200px;
+            }
+            .mobile-date-inputs-compact {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .mobile-price-inputs-compact {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .mobile-year-inputs-compact {
+                flex-direction: column;
+                gap: 8px;
             }
         }
         footer {
@@ -594,11 +675,67 @@
         </div>
     </header>
     <div class="container">
-        <!-- Мобильные контролы -->
-        <div class="mobile-controls-bar">
-            <div class="mobile-controls-buttons">
-                <button class="btn btn-primary mobile-filter-btn" onclick="openFiltersModal()">Фильтры</button>
-                <button class="btn btn-secondary mobile-sort-btn" onclick="openSortModal()">Сортировка</button>
+        <!-- Компактные фильтры для мобильных -->
+        <div class="mobile-compact-filters">
+            <div class="filters-header">
+                <h2>Фильтры</h2>
+                <button class="clear-filters" onclick="clearAllMobileFilters()">Сбросить все</button>
+            </div>
+            
+            <!-- Компактные даты в одну строку -->
+            <div class="mobile-filter-group">
+                <h3>Период аренды</h3>
+                <div class="mobile-date-inputs-compact">
+                    <input type="date" id="mobileStartDate" onchange="handleMobileDateChange()">
+                    <input type="date" id="mobileEndDate" onchange="handleMobileDateChange()">
+                </div>
+            </div>
+
+            <!-- Компактные марки в три колонки -->
+            <div class="mobile-filter-group">
+                <h3>Марка</h3>
+                <div class="mobile-brands-checkboxes" id="mobileBrandFilter">
+                    <!-- Динамически заполняется через JS -->
+                </div>
+            </div>
+
+            <!-- Компактная цена в одну строку -->
+            <div class="mobile-filter-group">
+                <h3>Цена за день</h3>
+                <div class="mobile-price-inputs-compact">
+                    <input type="number" id="mobileMinPrice" placeholder="От" min="0" onchange="handleMobileFilterChange()">
+                    <input type="number" id="mobileMaxPrice" placeholder="До" min="0" onchange="handleMobileFilterChange()">
+                </div>
+            </div>
+
+            <!-- Компактные годы в одну строку -->
+            <div class="mobile-filter-group">
+                <h3>Год выпуска</h3>
+                <div class="mobile-year-inputs-compact">
+                    <input type="number" id="mobileMinYear" placeholder="От" min="2000" max="2030" onchange="handleMobileFilterChange()">
+                    <input type="number" id="mobileMaxYear" placeholder="До" min="2000" max="2030" onchange="handleMobileFilterChange()">
+                </div>
+            </div>
+            
+            <!-- Компактные места -->
+            <div class="mobile-filter-group">
+                <h3>Количество мест</h3>
+                <div class="mobile-seats-row" id="mobileSeatsFilter">
+                    <!-- Динамически заполняется через JS -->
+                </div>
+            </div>
+            
+            <!-- Остальные фильтры -->
+            <div class="mobile-filter-group">
+                <h3>Другие фильтры</h3>
+                <div class="mobile-other-filters">
+                    <div class="mobile-transmission-filter" id="mobileTransmissionFilter">
+                        <!-- Динамически заполняется через JS -->
+                    </div>
+                    <div class="mobile-fuel-filter" id="mobileFuelFilter">
+                        <!-- Динамически заполняется через JS -->
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -708,22 +845,6 @@
         </div>
     </div>
     
-    <!-- Модальное окно фильтров для мобильных -->
-    <div class="filters-modal" id="filtersModal">
-        <div class="filters-modal-content">
-            <div class="filters-modal-header">
-                <h2>Фильтры</h2>
-                <button class="close-filters" onclick="closeFiltersModal()">×</button>
-            </div>
-            <div class="filters-modal-body" id="filtersModalBody">
-                <!-- Содержимое фильтров будет скопировано из aside -->
-            </div>
-            <div class="apply-filters-btn">
-                <button class="btn btn-primary" onclick="applyFiltersAndClose()">Применить фильтры</button>
-            </div>
-        </div>
-    </div>
-    
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -771,108 +892,9 @@
             filteredCars = [...allCars];
             setDefaultDates();
             renderFilters();
+            renderMobileFilters();
             renderCars();
             setupPagination();
-            initMobileFilters();
-        }
-        
-        // Инициализация мобильных фильтров
-        function initMobileFilters() {
-            // Копируем содержимое фильтров в модальное окно
-            const filtersSidebar = document.querySelector('.filters-sidebar');
-            const filtersModalBody = document.getElementById('filtersModalBody');
-            if (filtersSidebar && filtersModalBody) {
-                filtersModalBody.innerHTML = filtersSidebar.innerHTML;
-                
-                // Добавляем обработчики событий для фильтров в модальном окне
-                const filterInputs = filtersModalBody.querySelectorAll('input[type="checkbox"], input[type="number"], input[type="date"]');
-                filterInputs.forEach(input => {
-                    if (input.type === 'checkbox' || input.type === 'number') {
-                        input.addEventListener('change', handleFilterChange);
-                    } else if (input.type === 'date') {
-                        input.addEventListener('change', handleDateChange);
-                        input.addEventListener('blur', handleDateChange);
-                    }
-                });
-                
-                // Обработчик для кнопки сброса фильтров в модальном окне
-                const clearFiltersBtn = filtersModalBody.querySelector('.clear-filters');
-                if (clearFiltersBtn) {
-                    clearFiltersBtn.addEventListener('click', clearAllFilters);
-                }
-            }
-        }
-        
-        // Открытие модального окна фильтров
-        function openFiltersModal() {
-            document.getElementById('filtersModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            
-            // Синхронизируем состояние фильтров в модальном окне с основными фильтрами
-            syncFiltersToModal();
-        }
-        
-        // Закрытие модального окна фильтров
-        function closeFiltersModal() {
-            document.getElementById('filtersModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Применение фильтров и закрытие модального окна
-        function applyFiltersAndClose() {
-            // Синхронизируем состояние фильтров из модального окна в основные
-            syncFiltersFromModal();
-            applyFilters();
-            closeFiltersModal();
-        }
-        
-        // Синхронизация фильтров в модальное окно
-        function syncFiltersToModal() {
-            const mainFilters = document.querySelector('.filters-sidebar');
-            const modalFilters = document.getElementById('filtersModalBody');
-            
-            if (!mainFilters || !modalFilters) return;
-            
-            // Копируем значения всех инпутов из основных фильтров в модальные
-            const mainInputs = mainFilters.querySelectorAll('input');
-            const modalInputs = modalFilters.querySelectorAll('input');
-            
-            mainInputs.forEach((mainInput, index) => {
-                if (modalInputs[index]) {
-                    if (mainInput.type === 'checkbox') {
-                        modalInputs[index].checked = mainInput.checked;
-                    } else {
-                        modalInputs[index].value = mainInput.value;
-                    }
-                }
-            });
-        }
-        
-        // Синхронизация фильтров из модального окна
-        function syncFiltersFromModal() {
-            const mainFilters = document.querySelector('.filters-sidebar');
-            const modalFilters = document.getElementById('filtersModalBody');
-            
-            if (!mainFilters || !modalFilters) return;
-            
-            // Копируем значения всех инпутов из модальных фильтров в основные
-            const mainInputs = mainFilters.querySelectorAll('input');
-            const modalInputs = modalFilters.querySelectorAll('input');
-            
-            modalInputs.forEach((modalInput, index) => {
-                if (mainInputs[index]) {
-                    if (modalInput.type === 'checkbox') {
-                        mainInputs[index].checked = modalInput.checked;
-                    } else {
-                        mainInputs[index].value = modalInput.value;
-                    }
-                }
-            });
-        }
-        
-        // Открытие модального окна сортировки (заглушка)
-        function openSortModal() {
-            alert('Функция сортировки будет добавлена в ближайшее время');
         }
         
         // Установка дат по умолчанию (сегодня и завтра)
@@ -884,8 +906,13 @@
             const todayStr = today.toISOString().split('T')[0];
             const tomorrowStr = tomorrow.toISOString().split('T')[0];
             
+            // Основные даты
             document.getElementById('startDate').value = todayStr;
             document.getElementById('endDate').value = tomorrowStr;
+            
+            // Мобильные даты
+            document.getElementById('mobileStartDate').value = todayStr;
+            document.getElementById('mobileEndDate').value = tomorrowStr;
             
             console.log('Установлены даты по умолчанию:', {
                 startDate: todayStr,
@@ -896,7 +923,7 @@
             applyFilters();
         }
         
-        // Рендер фильтров
+        // Рендер фильтров для десктопа
         function renderFilters() {
             renderBrandFilter();
             renderYearFilter();
@@ -907,6 +934,15 @@
             renderDriveTypeFilter();
             renderInsuranceFilter();
         }
+        
+        // Рендер компактных фильтров для мобильных
+        function renderMobileFilters() {
+            renderMobileBrandFilter();
+            renderMobileSeatsFilter();
+            renderMobileTransmissionFilter();
+            renderMobileFuelFilter();
+        }
+        
         function renderBrandFilter() {
             const brands = [...new Set(allCars.map(car => car.brand))].sort();
             const container = document.getElementById('brandFilter');
@@ -921,6 +957,21 @@
                 `;
             }).join('');
         }
+        
+        function renderMobileBrandFilter() {
+            const brands = [...new Set(allCars.map(car => car.brand))].sort();
+            const container = document.getElementById('mobileBrandFilter');
+            container.innerHTML = brands.map(brand => {
+                const count = allCars.filter(car => car.brand === brand).length;
+                return `
+                    <div class="mobile-brand-checkbox">
+                        <input type="checkbox" id="mobile-brand-${brand}" value="${brand}" onchange="handleMobileFilterChange()">
+                        <label for="mobile-brand-${brand}">${brand}</label>
+                    </div>
+                `;
+            }).join('');
+        }
+        
         function renderYearFilter() {
             const years = [...new Set(allCars.map(car => car.year))].sort((a, b) => b - a);
             const container = document.getElementById('yearFilter');
@@ -935,6 +986,7 @@
                 `;
             }).join('');
         }
+        
         function renderTransmissionFilter() {
             const transmissions = [...new Set(allCars.map(car => car.transmission))];
             const container = document.getElementById('transmissionFilter');
@@ -950,6 +1002,20 @@
                 `;
             }).join('');
         }
+        
+        function renderMobileTransmissionFilter() {
+            const transmissions = [...new Set(allCars.map(car => car.transmission))];
+            const container = document.getElementById('mobileTransmissionFilter');
+            container.innerHTML = transmissions.map(transmission => {
+                const label = transmission === 'automatic' ? 'Автомат' : 'Механика';
+                return `
+                    <button class="mobile-filter-btn" data-transmission="${transmission}" onclick="toggleMobileTransmission('${transmission}')">
+                        ${label}
+                    </button>
+                `;
+            }).join('');
+        }
+        
         function renderFuelFilter() {
             const fuels = [...new Set(allCars.map(car => car.fuelType))];
             const container = document.getElementById('fuelFilter');
@@ -964,6 +1030,20 @@
                 `;
             }).join('');
         }
+        
+        function renderMobileFuelFilter() {
+            const fuels = [...new Set(allCars.map(car => car.fuelType))];
+            const container = document.getElementById('mobileFuelFilter');
+            container.innerHTML = fuels.map(fuel => {
+                const label = fuel === 'petrol' ? 'Бензин' : fuel === 'diesel' ? 'Дизель' : fuel;
+                return `
+                    <button class="mobile-filter-btn" data-fuel="${fuel}" onclick="toggleMobileFuel('${fuel}')">
+                        ${label}
+                    </button>
+                `;
+            }).join('');
+        }
+        
         function renderSeatsFilter() {
             const seats = [...new Set(allCars.map(car => car.seats))].sort((a, b) => a - b);
             const container = document.getElementById('seatsFilter');
@@ -978,6 +1058,19 @@
                 `;
             }).join('');
         }
+        
+        function renderMobileSeatsFilter() {
+            const seats = [...new Set(allCars.map(car => car.seats))].sort((a, b) => a - b);
+            const container = document.getElementById('mobileSeatsFilter');
+            container.innerHTML = seats.map(seat => {
+                return `
+                    <button class="mobile-seat-btn" data-seats="${seat}" onclick="toggleMobileSeats(${seat})">
+                        ${seat}
+                    </button>
+                `;
+            }).join('');
+        }
+        
         function renderDepositFilter() {
             const deposits = ['0-10000', '10000-15000', '15000-20000', '20000+'];
             const container = document.getElementById('depositFilter');
@@ -990,6 +1083,7 @@
                 `;
             }).join('');
         }
+        
         function renderDriveTypeFilter() {
             const driveTypes = [...new Set(allCars.map(car => car.driveType || 'н/д'))].filter(v => v !== 'н/д');
             if (driveTypes.length === 0) return;
@@ -1005,6 +1099,7 @@
                 `;
             }).join('');
         }
+        
         function renderInsuranceFilter() {
             const insurances = [...new Set(allCars.map(car => car.insurance || 'н/д'))].filter(v => v !== 'н/д');
             if (insurances.length === 0) return;
@@ -1020,6 +1115,7 @@
                 `;
             }).join('');
         }
+        
         function getDepositLabel(range) {
             const labels = {
                 '0-10000': 'до 10 000 ₽',
@@ -1029,8 +1125,100 @@
             };
             return labels[range];
         }
+        
+        // Функции для мобильных кнопок
+        function toggleMobileTransmission(transmission) {
+            const btn = document.querySelector(`[data-transmission="${transmission}"]`);
+            btn.classList.toggle('active');
+            syncMobileToMainFilters();
+            applyFilters();
+        }
+        
+        function toggleMobileFuel(fuel) {
+            const btn = document.querySelector(`[data-fuel="${fuel}"]`);
+            btn.classList.toggle('active');
+            syncMobileToMainFilters();
+            applyFilters();
+        }
+        
+        function toggleMobileSeats(seats) {
+            const btn = document.querySelector(`[data-seats="${seats}"]`);
+            btn.classList.toggle('active');
+            syncMobileToMainFilters();
+            applyFilters();
+        }
+        
+        // Синхронизация мобильных фильтров с основными
+        function syncMobileToMainFilters() {
+            // Бренды
+            const mobileBrandCheckboxes = document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]');
+            document.querySelectorAll('#brandFilter input[type="checkbox"]').forEach(checkbox => {
+                const mobileCheckbox = Array.from(mobileBrandCheckboxes).find(mcb => mcb.value === checkbox.value);
+                checkbox.checked = mobileCheckbox ? mobileCheckbox.checked : false;
+            });
+            
+            // Коробка передач
+            const activeTransmissions = document.querySelectorAll('.mobile-filter-btn[data-transmission].active');
+            document.querySelectorAll('#transmissionFilter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = Array.from(activeTransmissions).some(btn => btn.dataset.transmission === checkbox.value);
+            });
+            
+            // Топливо
+            const activeFuels = document.querySelectorAll('.mobile-filter-btn[data-fuel].active');
+            document.querySelectorAll('#fuelFilter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = Array.from(activeFuels).some(btn => btn.dataset.fuel === checkbox.value);
+            });
+            
+            // Места
+            const activeSeats = document.querySelectorAll('.mobile-seat-btn.active');
+            document.querySelectorAll('#seatsFilter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = Array.from(activeSeats).some(btn => btn.dataset.seats === checkbox.value);
+            });
+        }
+        
+        // Синхронизация основных фильтров с мобильными
+        function syncMainToMobileFilters() {
+            // Бренды
+            const checkedBrands = document.querySelectorAll('#brandFilter input[type="checkbox"]:checked');
+            document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = Array.from(checkedBrands).some(cb => cb.value === checkbox.value);
+            });
+            
+            // Коробка передач
+            const checkedTransmissions = document.querySelectorAll('#transmissionFilter input[type="checkbox"]:checked');
+            document.querySelectorAll('.mobile-filter-btn[data-transmission]').forEach(btn => {
+                btn.classList.toggle('active', Array.from(checkedTransmissions).some(checkbox => checkbox.value === btn.dataset.transmission));
+            });
+            
+            // Топливо
+            const checkedFuels = document.querySelectorAll('#fuelFilter input[type="checkbox"]:checked');
+            document.querySelectorAll('.mobile-filter-btn[data-fuel]').forEach(btn => {
+                btn.classList.toggle('active', Array.from(checkedFuels).some(checkbox => checkbox.value === btn.dataset.fuel));
+            });
+            
+            // Места
+            const checkedSeats = document.querySelectorAll('#seatsFilter input[type="checkbox"]:checked');
+            document.querySelectorAll('.mobile-seat-btn').forEach(btn => {
+                btn.classList.toggle('active', Array.from(checkedSeats).some(checkbox => checkbox.value === btn.dataset.seats));
+            });
+            
+            // Цена
+            document.getElementById('mobileMinPrice').value = document.getElementById('minPrice').value;
+            document.getElementById('mobileMaxPrice').value = document.getElementById('maxPrice').value;
+            
+            // Даты
+            document.getElementById('mobileStartDate').value = document.getElementById('startDate').value;
+            document.getElementById('mobileEndDate').value = document.getElementById('endDate').value;
+        }
+        
         // Обработка изменений фильтров
         function handleFilterChange() {
+            syncMainToMobileFilters();
+            applyFilters();
+        }
+        
+        function handleMobileFilterChange() {
+            syncMobileToMainFilters();
             applyFilters();
         }
         
@@ -1047,14 +1235,43 @@
                 if (startDateObj >= endDateObj) {
                     alert('Дата окончания должна быть позже даты начала');
                     document.getElementById('endDate').value = '';
+                    document.getElementById('mobileEndDate').value = '';
                     return;
                 }
             }
+            
+            // Синхронизация с мобильными датами
+            document.getElementById('mobileStartDate').value = startDate;
+            document.getElementById('mobileEndDate').value = endDate;
             
             // Применяем фильтры
             applyFilters();
         }
         
+        function handleMobileDateChange() {
+            const startDate = document.getElementById('mobileStartDate').value;
+            const endDate = document.getElementById('mobileEndDate').value;
+            
+            // Валидация дат
+            if (startDate && endDate) {
+                const startDateObj = new Date(startDate);
+                const endDateObj = new Date(endDate);
+                
+                if (startDateObj >= endDateObj) {
+                    alert('Дата окончания должна быть позже даты начала');
+                    document.getElementById('mobileEndDate').value = '';
+                    document.getElementById('endDate').value = '';
+                    return;
+                }
+            }
+            
+            // Синхронизация с основными датами
+            document.getElementById('startDate').value = startDate;
+            document.getElementById('endDate').value = endDate;
+            
+            // Применяем фильтры
+            applyFilters();
+        }
         
         // Проверка доступности автомобиля в выбранные даты
         function isCarAvailableInDates(car, startDate, endDate) {
@@ -1067,24 +1284,10 @@
             const selectedStartDate = new Date(startDate);
             const selectedEndDate = new Date(endDate);
             
-            // Отладочная информация для первой машины
-            if (car.id === 1) {
-                console.log('Проверка доступности для машины 1:', {
-                    carStartDate: car.availability.startDate,
-                    carEndDate: car.availability.endDate,
-                    selectedStartDate: startDate,
-                    selectedEndDate: endDate,
-                    carStartDateObj: carStartDate,
-                    carEndDateObj: carEndDate,
-                    selectedStartDateObj: selectedStartDate,
-                    selectedEndDateObj: selectedEndDate,
-                    isAvailable: selectedStartDate >= carStartDate && selectedEndDate <= carEndDate
-                });
-            }
-            
             // Проверяем, что выбранный период полностью входит в доступный период автомобиля
             return selectedStartDate >= carStartDate && selectedEndDate <= carEndDate;
         }
+        
         function applyFilters() {
             // Сохраняем текущую позицию скролла
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1098,6 +1301,7 @@
             // Восстанавливаем позицию скролла
             window.scrollTo(0, scrollTop);
         }
+        
         function getCurrentFilters() {
             const filters = {};
             // Бренды
@@ -1121,10 +1325,12 @@
             filters.insurances = getCheckedValues('insurance');
             return filters;
         }
+        
         function getCheckedValues(prefix) {
             const checkboxes = document.querySelectorAll(`input[type="checkbox"][id^="${prefix}-"]:checked`);
             return Array.from(checkboxes).map(cb => cb.value);
         }
+        
         function matchesFilters(car) {
             const f = currentFilters;
             
@@ -1159,6 +1365,7 @@
             if (f.insurances.length > 0 && !f.insurances.includes(car.insurance)) return false;
             return true;
         }
+        
         // Очистка фильтров
         function clearAllFilters() {
             // Сброс чекбоксов
@@ -1172,6 +1379,27 @@
             setDefaultDates();
             applyFilters();
         }
+        
+        function clearAllMobileFilters() {
+            // Сброс чекбоксов брендов
+            document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            // Сброс кнопок
+            document.querySelectorAll('.mobile-filter-btn, .mobile-seat-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Сброс полей цены
+            document.getElementById('mobileMinPrice').value = '';
+            document.getElementById('mobileMaxPrice').value = '';
+            // Сброс полей годов
+            document.getElementById('mobileMinYear').value = '';
+            document.getElementById('mobileMaxYear').value = '';
+            // Сброс дат к значениям по умолчанию
+            setDefaultDates();
+            applyFilters();
+        }
+        
         // Рендер автомобилей
         function renderCars() {
             const grid = document.getElementById('carsGrid');
@@ -1197,7 +1425,6 @@
                         <p class="car-details">${car.year} год • ${car.engine}L ${car.fuelType} • ${car.transmission === 'automatic' ? 'АКПП' : 'МКПП'}</p>
                         <p class="car-details">${car.seats} мест • ${car.fuelType}</p>
                         <div class="car-features">
-                            <!-- Убрано: двери и кондиционер -->
                             ${car.driveType && car.driveType !== 'н/д' ? `<span class="car-feature">Привод: ${car.driveType}</span>` : ''}
                             ${car.mileage && car.mileage !== 'н/д' ? `<span class="car-feature">Пробег: ${car.mileage}</span>` : ''}
                             ${car.includedMileage && car.includedMileage !== 'н/д' ? `<span class="car-feature">Вкл. пробег: ${car.includedMileage}</span>` : ''}
@@ -1214,6 +1441,7 @@
                 </div>
             `).join('');
         }
+        
         // Пагинация
         function setupPagination() {
             const totalPages = Math.ceil(filteredCars.length / carsPerPage);
@@ -1237,6 +1465,7 @@
                 pageNumbers.appendChild(pageBtn);
             }
         }
+        
         function changePage(page) {
             const totalPages = Math.ceil(filteredCars.length / carsPerPage);
             if (page < 1 || page > totalPages) return;
@@ -1245,6 +1474,7 @@
             setupPagination();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+        
         // Бронирование автомобиля
         function bookCar(carId) {
             // Получаем даты из формы на главной странице или устанавливаем по умолчанию
@@ -1271,6 +1501,7 @@
             
             window.location.href = `booking.html?carId=${carId}&startDate=${startDate}&endDate=${endDate}`;
         }
+        
         // Загрузка данных при загрузке страницы
         document.addEventListener('DOMContentLoaded', loadCarsData);
     </script>
