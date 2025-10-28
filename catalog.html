@@ -386,71 +386,10 @@
         /* Мобильные стили для компактных фильтров */
         .mobile-compact-filters {
             display: none;
-        }
-        
-        /* Компактные даты в одну строку */
-        .mobile-date-inputs-compact {
-            display: flex;
-            gap: 8px;
-        }
-        .mobile-date-inputs-compact input[type="date"] {
-            flex: 1;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid #8B5A2B;
-            border-radius: 5px;
-            color: #333;
-            font-size: 0.8rem;
-            box-sizing: border-box;
-        }
-
-        /* Компактные марки галочками в три колонки */
-        .mobile-brands-checkboxes {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-        }
-        .mobile-brand-checkbox {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.75rem;
-            color: #D4C4A8;
-        }
-        .mobile-brand-checkbox input[type="checkbox"] {
-            width: 14px;
-            height: 14px;
-            accent-color: #8B5A2B;
-        }
-
-        /* Компактная цена в одну строку */
-        .mobile-price-inputs-compact {
-            display: flex;
-            gap: 8px;
-        }
-        .mobile-price-inputs-compact input {
-            flex: 1;
-            padding: 8px;
-            background: rgba(35, 26, 22, 0.8);
-            border: 1px solid #8B5A2B;
-            border-radius: 5px;
-            color: #F0E6D2;
-            font-size: 0.8rem;
-        }
-
-        /* Компактные годы в одну строку */
-        .mobile-year-inputs-compact {
-            display: flex;
-            gap: 8px;
-        }
-        .mobile-year-inputs-compact input {
-            flex: 1;
-            padding: 8px;
-            background: rgba(35, 26, 22, 0.8);
-            border: 1px solid #8B5A2B;
-            border-radius: 5px;
-            color: #F0E6D2;
-            font-size: 0.8rem;
+            background: rgba(40, 30, 25, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 0 10px 20px;
         }
 
         /* Компактные стили для мобильных фильтров */
@@ -467,6 +406,78 @@
             color: #E8DCC5;
             margin-bottom: 10px;
             font-size: 1rem;
+        }
+
+        /* Компактные даты в одну строку */
+        .mobile-date-inputs-compact {
+            display: flex;
+            gap: 8px;
+        }
+        .mobile-date-inputs-compact input[type="date"] {
+            flex: 1;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #8B5A2B;
+            border-radius: 5px;
+            color: #333;
+            font-size: 0.8rem;
+            box-sizing: border-box;
+            min-height: 38px;
+        }
+
+        /* Компактные марки в три колонки */
+        .mobile-brands-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+        }
+        .mobile-brand-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            color: #D4C4A8;
+            padding: 4px 2px;
+        }
+        .mobile-brand-checkbox input[type="checkbox"] {
+            width: 12px;
+            height: 12px;
+            accent-color: #8B5A2B;
+            margin: 0;
+        }
+
+        /* Компактная цена в одну строку */
+        .mobile-price-inputs-compact {
+            display: flex;
+            gap: 8px;
+        }
+        .mobile-price-inputs-compact input {
+            flex: 1;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #8B5A2B;
+            border-radius: 5px;
+            color: #333;
+            font-size: 0.8rem;
+            box-sizing: border-box;
+            min-height: 38px;
+        }
+
+        /* Компактные годы в одну строку */
+        .mobile-year-inputs-compact {
+            display: flex;
+            gap: 8px;
+        }
+        .mobile-year-inputs-compact input {
+            flex: 1;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #8B5A2B;
+            border-radius: 5px;
+            color: #333;
+            font-size: 0.8rem;
+            box-sizing: border-box;
+            min-height: 38px;
         }
 
         /* Компактные места в одну строку */
@@ -540,10 +551,34 @@
             }
             .mobile-compact-filters {
                 display: block;
-                background: rgba(40, 30, 25, 0.8);
-                border-radius: 10px;
-                padding: 15px;
-                margin: 0 10px 20px;
+            }
+            
+            /* Компактные стили для десктопных фильтров в мобильной версии */
+            .date-inputs {
+                display: flex;
+                gap: 8px;
+            }
+            .date-input-group {
+                flex: 1;
+            }
+            .date-input-group label {
+                font-size: 0.8rem;
+                margin-bottom: 5px;
+                display: block;
+            }
+            .date-input-group input[type="date"] {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+            
+            .price-inputs {
+                display: flex;
+                gap: 8px;
+            }
+            .price-inputs input {
+                flex: 1;
+                font-size: 0.8rem;
+                padding: 8px;
             }
         }
         @media (max-width: 768px) {
@@ -588,14 +623,8 @@
             .car-image {
                 height: 200px;
             }
-            .mobile-date-inputs-compact {
-                flex-direction: column;
-                gap: 8px;
-            }
-            .mobile-price-inputs-compact {
-                flex-direction: column;
-                gap: 8px;
-            }
+            .mobile-date-inputs-compact,
+            .mobile-price-inputs-compact,
             .mobile-year-inputs-compact {
                 flex-direction: column;
                 gap: 8px;
@@ -871,7 +900,7 @@
         let allCars = [];
         let filteredCars = [];
         let currentPage = 1;
-        const carsPerPage = 30; // 3 колонки × 10 рядов
+        const carsPerPage = 30;
         let currentFilters = {};
         
         // Загрузка данных
@@ -897,7 +926,7 @@
             setupPagination();
         }
         
-        // Установка дат по умолчанию (сегодня и завтра)
+        // Установка дат по умолчанию
         function setDefaultDates() {
             const today = new Date();
             const tomorrow = new Date(today);
@@ -914,12 +943,6 @@
             document.getElementById('mobileStartDate').value = todayStr;
             document.getElementById('mobileEndDate').value = tomorrowStr;
             
-            console.log('Установлены даты по умолчанию:', {
-                startDate: todayStr,
-                endDate: tomorrowStr
-            });
-            
-            // Применяем фильтры с установленными датами
             applyFilters();
         }
         
@@ -1157,6 +1180,14 @@
                 checkbox.checked = mobileCheckbox ? mobileCheckbox.checked : false;
             });
             
+            // Цена
+            document.getElementById('minPrice').value = document.getElementById('mobileMinPrice').value;
+            document.getElementById('maxPrice').value = document.getElementById('mobileMaxPrice').value;
+            
+            // Даты
+            document.getElementById('startDate').value = document.getElementById('mobileStartDate').value;
+            document.getElementById('endDate').value = document.getElementById('mobileEndDate').value;
+            
             // Коробка передач
             const activeTransmissions = document.querySelectorAll('.mobile-filter-btn[data-transmission].active');
             document.querySelectorAll('#transmissionFilter input[type="checkbox"]').forEach(checkbox => {
@@ -1184,6 +1215,14 @@
                 checkbox.checked = Array.from(checkedBrands).some(cb => cb.value === checkbox.value);
             });
             
+            // Цена
+            document.getElementById('mobileMinPrice').value = document.getElementById('minPrice').value;
+            document.getElementById('mobileMaxPrice').value = document.getElementById('maxPrice').value;
+            
+            // Даты
+            document.getElementById('mobileStartDate').value = document.getElementById('startDate').value;
+            document.getElementById('mobileEndDate').value = document.getElementById('endDate').value;
+            
             // Коробка передач
             const checkedTransmissions = document.querySelectorAll('#transmissionFilter input[type="checkbox"]:checked');
             document.querySelectorAll('.mobile-filter-btn[data-transmission]').forEach(btn => {
@@ -1201,14 +1240,6 @@
             document.querySelectorAll('.mobile-seat-btn').forEach(btn => {
                 btn.classList.toggle('active', Array.from(checkedSeats).some(checkbox => checkbox.value === btn.dataset.seats));
             });
-            
-            // Цена
-            document.getElementById('mobileMinPrice').value = document.getElementById('minPrice').value;
-            document.getElementById('mobileMaxPrice').value = document.getElementById('maxPrice').value;
-            
-            // Даты
-            document.getElementById('mobileStartDate').value = document.getElementById('startDate').value;
-            document.getElementById('mobileEndDate').value = document.getElementById('endDate').value;
         }
         
         // Обработка изменений фильтров
@@ -1227,7 +1258,6 @@
             const startDate = document.getElementById('startDate').value;
             const endDate = document.getElementById('endDate').value;
             
-            // Валидация дат
             if (startDate && endDate) {
                 const startDateObj = new Date(startDate);
                 const endDateObj = new Date(endDate);
@@ -1240,11 +1270,9 @@
                 }
             }
             
-            // Синхронизация с мобильными датами
             document.getElementById('mobileStartDate').value = startDate;
             document.getElementById('mobileEndDate').value = endDate;
             
-            // Применяем фильтры
             applyFilters();
         }
         
@@ -1252,7 +1280,6 @@
             const startDate = document.getElementById('mobileStartDate').value;
             const endDate = document.getElementById('mobileEndDate').value;
             
-            // Валидация дат
             if (startDate && endDate) {
                 const startDateObj = new Date(startDate);
                 const endDateObj = new Date(endDate);
@@ -1265,17 +1292,15 @@
                 }
             }
             
-            // Синхронизация с основными датами
             document.getElementById('startDate').value = startDate;
             document.getElementById('endDate').value = endDate;
             
-            // Применяем фильтры
             applyFilters();
         }
         
         // Проверка доступности автомобиля в выбранные даты
         function isCarAvailableInDates(car, startDate, endDate) {
-            if (!startDate || !endDate) return true; // Если даты не выбраны, показываем все
+            if (!startDate || !endDate) return true;
             
             if (!car.availability || !car.availability.isAvailable) return false;
             
@@ -1284,12 +1309,10 @@
             const selectedStartDate = new Date(startDate);
             const selectedEndDate = new Date(endDate);
             
-            // Проверяем, что выбранный период полностью входит в доступный период автомобиля
             return selectedStartDate >= carStartDate && selectedEndDate <= carEndDate;
         }
         
         function applyFilters() {
-            // Сохраняем текущую позицию скролла
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
             currentFilters = getCurrentFilters();
@@ -1298,30 +1321,20 @@
             renderCars();
             setupPagination();
             
-            // Восстанавливаем позицию скролла
             window.scrollTo(0, scrollTop);
         }
         
         function getCurrentFilters() {
             const filters = {};
-            // Бренды
             filters.brands = getCheckedValues('brand');
-            // Годы
             filters.years = getCheckedValues('year').map(year => parseInt(year));
-            // Коробки передач
             filters.transmissions = getCheckedValues('transmission');
-            // Типы топлива
             filters.fuels = getCheckedValues('fuel');
-            // Количество мест
             filters.seats = getCheckedValues('seats').map(seat => parseInt(seat));
-            // Цена
             filters.minPrice = document.getElementById('minPrice').value ? parseInt(document.getElementById('minPrice').value) : 0;
             filters.maxPrice = document.getElementById('maxPrice').value ? parseInt(document.getElementById('maxPrice').value) : Infinity;
-            // Залог
             filters.depositRanges = getCheckedValues('deposit');
-            // Привод
             filters.driveTypes = getCheckedValues('driveType');
-            // Страховка
             filters.insurances = getCheckedValues('insurance');
             return filters;
         }
@@ -1334,24 +1347,16 @@
         function matchesFilters(car) {
             const f = currentFilters;
             
-            // Проверка доступности по датам
             const startDate = document.getElementById('startDate').value;
             const endDate = document.getElementById('endDate').value;
             if (!isCarAvailableInDates(car, startDate, endDate)) return false;
             
-            // Проверка бренда
             if (f.brands.length > 0 && !f.brands.includes(car.brand)) return false;
-            // Проверка года
             if (f.years.length > 0 && !f.years.includes(car.year)) return false;
-            // Проверка коробки передач
             if (f.transmissions.length > 0 && !f.transmissions.includes(car.transmission)) return false;
-            // Проверка типа топлива
             if (f.fuels.length > 0 && !f.fuels.includes(car.fuelType)) return false;
-            // Проверка количества мест
             if (f.seats.length > 0 && !f.seats.includes(car.seats)) return false;
-            // Проверка цены (используем цену за 1 день)
             if (car.prices["1"] < f.minPrice || car.prices["1"] > f.maxPrice) return false;
-            // Проверка залога
             if (f.depositRanges.length > 0) {
                 const depositMatch = f.depositRanges.some(range => {
                     const [min, max] = range === '20000+' ? [20000, Infinity] : range.split('-').map(Number);
@@ -1359,43 +1364,33 @@
                 });
                 if (!depositMatch) return false;
             }
-            // Проверка привода
             if (f.driveTypes.length > 0 && !f.driveTypes.includes(car.driveType)) return false;
-            // Проверка страховки
             if (f.insurances.length > 0 && !f.insurances.includes(car.insurance)) return false;
             return true;
         }
         
         // Очистка фильтров
         function clearAllFilters() {
-            // Сброс чекбоксов
             document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
                 checkbox.checked = false;
             });
-            // Сброс полей цены
             document.getElementById('minPrice').value = '';
             document.getElementById('maxPrice').value = '';
-            // Сброс дат к значениям по умолчанию
             setDefaultDates();
             applyFilters();
         }
         
         function clearAllMobileFilters() {
-            // Сброс чекбоксов брендов
             document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]').forEach(checkbox => {
                 checkbox.checked = false;
             });
-            // Сброс кнопок
             document.querySelectorAll('.mobile-filter-btn, .mobile-seat-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            // Сброс полей цены
             document.getElementById('mobileMinPrice').value = '';
             document.getElementById('mobileMaxPrice').value = '';
-            // Сброс полей годов
             document.getElementById('mobileMinYear').value = '';
             document.getElementById('mobileMaxYear').value = '';
-            // Сброс дат к значениям по умолчанию
             setDefaultDates();
             applyFilters();
         }
@@ -1452,10 +1447,8 @@
                 return;
             }
             pagination.style.display = 'flex';
-            // Кнопки назад/вперед
             document.querySelector('.prev-btn').disabled = currentPage === 1;
             document.querySelector('.next-btn').disabled = currentPage === totalPages;
-            // Номера страниц
             pageNumbers.innerHTML = '';
             for (let i = 1; i <= totalPages; i++) {
                 const pageBtn = document.createElement('div');
@@ -1477,7 +1470,6 @@
         
         // Бронирование автомобиля
         function bookCar(carId) {
-            // Получаем даты из формы на главной странице или устанавливаем по умолчанию
             const startDateInput = document.getElementById('startDate');
             const endDateInput = document.getElementById('endDate');
             
@@ -1489,7 +1481,6 @@
                 endDate = endDateInput.value || '';
             }
             
-            // Если даты не выбраны, устанавливаем значения по умолчанию
             if (!startDate || !endDate) {
                 const today = new Date();
                 const tomorrow = new Date(today);
