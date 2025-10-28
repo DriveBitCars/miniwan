@@ -1287,17 +1287,21 @@ function syncMobileFiltersToMain() {
         
         // Синхронизация основных фильтров с мобильными
         function syncMainFiltersToMobile() {
-            // Бренды
-            const checkedBrands = document.querySelectorAll('#brandFilter input[type="checkbox"]:checked');
-            document.querySelectorAll('.mobile-brand-btn').forEach(btn => {
-                btn.classList.toggle('active', Array.from(checkedBrands).some(checkbox => checkbox.value === btn.dataset.brand));
-            });
-            
-            // Годы
-            const checkedYears = document.querySelectorAll('#yearFilter input[type="checkbox"]:checked');
-            document.querySelectorAll('.mobile-year-btn').forEach(btn => {
-                btn.classList.toggle('active', Array.from(checkedYears).some(checkbox => checkbox.value === btn.dataset.year));
-            });
+       function syncMainFiltersToMobile() {
+    // Бренды
+    const checkedBrands = document.querySelectorAll('#brandFilter input[type="checkbox"]:checked');
+    document.querySelectorAll('#mobileBrandFilter input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = Array.from(checkedBrands).some(cb => cb.value === checkbox.value);
+    });
+    
+    // Цена
+    document.getElementById('mobileMinPrice').value = document.getElementById('minPrice').value;
+    document.getElementById('mobileMaxPrice').value = document.getElementById('maxPrice').value;
+    
+    // Даты
+    document.getElementById('mobileStartDate').value = document.getElementById('startDate').value;
+    document.getElementById('mobileEndDate').value = document.getElementById('endDate').value;
+}
             
             // Места
             const checkedSeats = document.querySelectorAll('#seatsFilter input[type="checkbox"]:checked');
