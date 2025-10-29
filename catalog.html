@@ -1182,10 +1182,16 @@
             const startIndex = (currentPage - 1) * carsPerPage;
             const endIndex = startIndex + carsPerPage;
             const carsToShow = filteredCars.slice(startIndex, endIndex);
-            grid.innerHTML = carsToShow.map(car => `
+            grid.innerHTML = carsToShow.map(car => {
+                // Создаем путь к превью-изображению
+                const originalImage = car.images[0];
+                const thumbnailPath = originalImage.replace('images/cars/', 'images/cars/thumbnails/').replace(/\.[^/.]+$/, '_thumb.jpg');
+                
+                return `
                 <div class="car-card" onclick="window.location.href='car-detail.html?id=${car.id}'">
                     <div class="car-image">
-                        <img src="${car.images[0]}" alt="${car.brand} ${car.model}" 
+                        <img src="${thumbnailPath}" 
+                             alt="${car.brand} ${car.model}" 
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                         <div class="image-placeholder" style="display: none;">
                             ${car.brand} ${car.model}
@@ -1212,7 +1218,8 @@
                         </button>
                     </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
         // Пагинация
         function setupPagination() {
@@ -1271,6 +1278,7 @@
             
             window.location.href = `booking.html?carId=${carId}&startDate=${startDate}&endDate=${endDate}`;
         }
+        
         // Загрузка данных при загрузке страницы
         document.addEventListener('DOMContentLoaded', loadCarsData);
     </script>
