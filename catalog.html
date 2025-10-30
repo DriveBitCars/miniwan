@@ -875,27 +875,6 @@
             alert('Функция сортировки будет добавлена в ближайшее время');
         }
         
-        // Установка дат по умолчанию (сегодня и завтра)
-        function setDefaultDates() {
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            
-            const todayStr = today.toISOString().split('T')[0];
-            const tomorrowStr = tomorrow.toISOString().split('T')[0];
-            
-            document.getElementById('startDate').value = todayStr;
-            document.getElementById('endDate').value = tomorrowStr;
-            
-            console.log('Установлены даты по умолчанию:', {
-                startDate: todayStr,
-                endDate: tomorrowStr
-            });
-            
-            // Применяем фильтры с установленными датами
-            applyFilters();
-        }
-        
         // Рендер фильтров
         function renderFilters() {
             renderBrandFilter();
