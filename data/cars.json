@@ -1381,5 +1381,71 @@
       "endDate": "2030-12-30",
       "isAvailable": true
     }
+  },
+  {
+    "id": 26,
+    "brand": "Toyota",
+    "model": "Sienna",
+    "year": 2018,
+    "engine": "3.5",
+    "transmission": "automatic",
+    "fuelType": "Бензин",
+    "seats": 7,
+    "prices": {
+      "1": 7000,
+      "4": 6650,
+      "7": 6300,
+      "14": 5950,
+      "21": 5600
+    },
+    "deposit": 10000,
+    "rentalRules": {
+      "minExperience": 2,
+      "minAge": 25
+    },
+    "isPopular": true,
+    "description": "Комфортный лайнер для путешествий большой компанией. ✅полный привод ✅3х зонный климат контроль ✅активный круиз контроль ✅кожаный салон ✅пневмоподвеска ✅TV, DVD и т.д. Смешанный расход 12 л/100 км АИ95",
+    "features": [
+      "Полный привод",
+      "3-х зонный климат контроль",
+      "Активный круиз контроль",
+      "Кожаный салон",
+      "Пневмоподвеска",
+      "TV, DVD",
+      "Детские кресла",
+      "Холодильник"
+    ],
+    "images": [
+      "images/cars/026-1.jpg",
+      "images/cars/026-2.jpg",
+      "images/cars/026-3.jpg",
+      "images/cars/026-4.jpg",
+      "images/cars/026-5.jpg",
+      "images/cars/026-6.jpg",
+      "images/cars/026-7.jpg",
+      "images/cars/026-8.jpg",
+      "images/cars/026-9.jpg",
+      "images/cars/026-10.jpg",
+      "images/cars/026-11.jpg",
+      "images/cars/026-12.jpg",
+      "images/cars/026-13.jpg"
+    ],
+    "owner": {
+      "name": "Сергей Лисицын",
+      "rating": 4.9,
+      "carsCount": 8,
+      "rentalsCount": 178
+    },
+    "location": "Москва, Волоколамская",
+    "available": true,
+    "driveType": "Полный",
+    "mileage": "н/д",
+    "includedMileage": "250",
+    "insurance": "ОСАГО (Мультидрайв)",
+    "availability": {
+      "startDate": "2025-10-01",
+      "endDate": "2030-12-30",
+      "isAvailable": true
+    }
   }
 ]
