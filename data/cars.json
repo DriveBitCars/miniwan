@@ -1266,5 +1266,57 @@
       "endDate": "2030-12-30",
       "isAvailable": true
     }
+  },
+  {
+    "id": 24,
+    "brand": "Hyundai",
+    "model": "Grand Starex",
+    "year": 2010,
+    "engine": "2.5",
+    "transmission": "automatic",
+    "fuelType": "Дизель",
+    "seats": 7,
+    "prices": {
+      "1": 4000,
+      "4": 4000,
+      "7": 4000,
+      "14": 3500,
+      "21": 3500
+    },
+    "deposit": 5000,
+    "rentalRules": {
+      "minExperience": 1,
+      "minAge": 20
+    },
+    "isPopular": false,
+    "description": "Авто ухожен, обслужен, готов к работе. Условия договорные! Пишите желаемые даты и примерный пробег! Спасибо!",
+    "features": [],
+    "images": [
+      "images/cars/024-1.jpg",
+      "images/cars/024-2.jpg",
+      "images/cars/024-3.jpg",
+      "images/cars/024-4.jpg",
+      "images/cars/024-5.jpg",
+      "images/cars/024-6.jpg",
+      "images/cars/024-7.jpg",
+      "images/cars/024-8.jpg"
+    ],
+    "owner": {
+      "name": "Александр",
+      "rating": 4.8,
+      "carsCount": 2,
+      "rentalsCount": 23
+    },
+    "location": "н/д",
+    "available": true,
+    "driveType": "Задний",
+    "mileage": "н/д",
+    "includedMileage": "250",
+    "insurance": "ОСАГО",
+    "availability": {
+      "startDate": "2025-10-01",
+      "endDate": "2030-12-30",
+      "isAvailable": true
+    }
   }
 ]
