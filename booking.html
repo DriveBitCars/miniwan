@@ -775,7 +775,7 @@
         function calculateRentalDays() {
             const start = new Date(startDate);
             const end = new Date(endDate);
-            rentalDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + 1;
+            rentalDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
         }
 
         // Получение цены автомобиля в зависимости от количества дней
@@ -1049,4 +1049,5 @@
         document.addEventListener('DOMContentLoaded', loadBookingData);
     </script>
 </body>
+
 </html>
