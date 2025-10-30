@@ -1318,5 +1318,66 @@
       "endDate": "2030-12-30",
       "isAvailable": true
     }
+  },
+  {
+    "id": 25,
+    "brand": "Toyota",
+    "model": "Sienna",
+    "year": 2013,
+    "engine": "3.5",
+    "transmission": "automatic",
+    "fuelType": "Бензин",
+    "seats": 7,
+    "prices": {
+      "1": 7000,
+      "4": 6650,
+      "7": 6300,
+      "14": 5950,
+      "21": 5600
+    },
+    "deposit": 10000,
+    "rentalRules": {
+      "minExperience": 2,
+      "minAge": 25
+    },
+    "isPopular": true,
+    "description": "Полноприводный лайнер Тойота Сиенна идеально подходит для комфортного путешествия большой компанией. Вместительный 7 местный салон и огромный багажник. В наличии автобокс на крышу, детские автокресла, холодильник. Возможна доставка по Москве, МО, в аэропорт",
+    "features": [
+      "Полный привод",
+      "Автобокс на крышу",
+      "Детские автокресла",
+      "Холодильник",
+      "Доставка в аэропорт",
+      "Огромный багажник"
+    ],
+    "images": [
+      "images/cars/025-1.jpg",
+      "images/cars/025-2.jpg",
+      "images/cars/025-3.jpg",
+      "images/cars/025-4.jpg",
+      "images/cars/025-5.jpg",
+      "images/cars/025-6.jpg",
+      "images/cars/025-7.jpg",
+      "images/cars/025-8.jpg",
+      "images/cars/025-9.jpg",
+      "images/cars/025-10.jpg"
+    ],
+    "owner": {
+      "name": "Сергей Лисицын",
+      "rating": 4.9,
+      "carsCount": 8,
+      "rentalsCount": 178
+    },
+    "location": "Москва, Митинская, Метро Митино",
+    "available": true,
+    "driveType": "Полный",
+    "mileage": "н/д",
+    "includedMileage": "250",
+    "insurance": "ОСАГО (Мультидрайв)",
+    "availability": {
+      "startDate": "2025-10-01",
+      "endDate": "2030-12-30",
+      "isAvailable": true
+    }
   }
 ]
