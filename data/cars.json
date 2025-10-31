@@ -1507,5 +1507,73 @@
       "endDate": "2030-12-30",
       "isAvailable": true
     }
+  },
+  {
+    "id": 28,
+    "brand": "Hyundai",
+    "model": "H1 (Grand Starex)",
+    "year": 2009,
+    "engine": "2.5",
+    "transmission": "automatic",
+    "fuelType": "Дизель",
+    "seats": 8,
+    "prices": {
+      "1": 5500,
+      "4": 5225,
+      "7": 4950,
+      "14": 4675,
+      "21": 4400
+    },
+    "deposit": 10000,
+    "rentalRules": {
+      "minExperience": 3,
+      "minAge": 23
+    },
+    "isPopular": false,
+    "description": "Дизельный минивэн Hyundai H1 (Grand Starex) 2009 года. Надежный автомобиль с экономичным расходом топлива. Подходит для семейных поездок и командировок.",
+    "features": [
+      "Дизельный двигатель",
+      "8 посадочных мест",
+      "Автоматическая коробка передач",
+      "Кондиционер",
+      "Электростеклоподъемники",
+      "Доставка автомобиля"
+    ],
+    "images": [
+      "images/cars/028-1.jpg",
+      "images/cars/028-2.jpg",
+      "images/cars/028-3.jpg",
+      "images/cars/028-4.jpg",
+      "images/cars/028-5.jpg",
+      "images/cars/028-6.jpg",
+      "images/cars/028-7.jpg",
+      "images/cars/028-8.jpg",
+      "images/cars/028-9.jpg",
+      "images/cars/028-10.jpg",
+      "images/cars/028-11.jpg",
+      "images/cars/028-12.jpg",
+      "images/cars/028-13.jpg",
+      "images/cars/028-14.jpg",
+      "images/cars/028-15.jpg",
+      "images/cars/028-16.jpg",
+      "images/cars/028-17.jpg"
+    ],
+    "owner": {
+      "name": "Владелец",
+      "rating": 4.9,
+      "carsCount": 1,
+      "rentalsCount": 10
+    },
+    "location": "Москва, Ховрино",
+    "available": true,
+    "driveType": "Задний",
+    "mileage": "н/д",
+    "includedMileage": "200",
+    "insurance": "ОСАГО (Мультидрайв)",
+    "availability": {
+      "startDate": "2025-10-01",
+      "endDate": "2030-12-30",
+      "isAvailable": true
+    }
   }
 ]
