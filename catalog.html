@@ -650,8 +650,11 @@
                 <!-- Фильтр по году -->
                 <div class="filter-group">
                     <h3>Год выпуска</h3>
-                    <div class="filter-options" id="yearFilter">
-                        <!-- Динамически заполняется через JS -->
+                    <div class="price-range">
+                        <div class="price-inputs">
+                            <input type="number" id="minYear" placeholder="От" min="1990" max="2025" onchange="handleFilterChange()" oninput="handleFilterChange()">
+                            <input type="number" id="maxYear" placeholder="До" min="1990" max="2025" onchange="handleFilterChange()" oninput="handleFilterChange()">
+                        </div>
                     </div>
                 </div>
                 <!-- Фильтр по коробке передач -->
@@ -900,7 +903,6 @@
         // Рендер фильтров
         function renderFilters() {
             renderBrandFilter();
-            renderYearFilter();
             renderTransmissionFilter();
             renderFuelFilter();
             renderSeatsFilter();
@@ -917,20 +919,6 @@
                     <div class="filter-option">
                         <input type="checkbox" id="brand-${brand}" value="${brand}" onchange="handleFilterChange()">
                         <label for="brand-${brand}">${brand}</label>
-                        <span class="filter-option-count">(${count})</span>
-                    </div>
-                `;
-            }).join('');
-        }
-        function renderYearFilter() {
-            const years = [...new Set(allCars.map(car => car.year))].sort((a, b) => b - a);
-            const container = document.getElementById('yearFilter');
-            container.innerHTML = years.map(year => {
-                const count = allCars.filter(car => car.year === year).length;
-                return `
-                    <div class="filter-option">
-                        <input type="checkbox" id="year-${year}" value="${year}" onchange="handleFilterChange()">
-                        <label for="year-${year}">${year}</label>
                         <span class="filter-option-count">(${count})</span>
                     </div>
                 `;
@@ -1103,8 +1091,9 @@
             const filters = {};
             // Бренды
             filters.brands = getCheckedValues('brand');
-            // Годы
-            filters.years = getCheckedValues('year').map(year => parseInt(year));
+            // Годы (диапазон)
+            filters.minYear = document.getElementById('minYear').value ? parseInt(document.getElementById('minYear').value) : 0;
+            filters.maxYear = document.getElementById('maxYear').value ? parseInt(document.getElementById('maxYear').value) : Infinity;
             // Коробки передач
             filters.transmissions = getCheckedValues('transmission');
             // Типы топлива
@@ -1136,8 +1125,8 @@
             
             // Проверка бренда
             if (f.brands.length > 0 && !f.brands.includes(car.brand)) return false;
-            // Проверка года
-            if (f.years.length > 0 && !f.years.includes(car.year)) return false;
+            // Проверка года (диапазон)
+            if (car.year < f.minYear || car.year > f.maxYear) return false;
             // Проверка коробки передач
             if (f.transmissions.length > 0 && !f.transmissions.includes(car.transmission)) return false;
             // Проверка типа топлива
@@ -1169,6 +1158,9 @@
             // Сброс полей цены
             document.getElementById('minPrice').value = '';
             document.getElementById('maxPrice').value = '';
+            // Сброс полей года
+            document.getElementById('minYear').value = '';
+            document.getElementById('maxYear').value = '';
             // Сброс дат к значениям по умолчанию
             setDefaultDates();
             applyFilters();
