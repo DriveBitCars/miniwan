@@ -778,7 +778,6 @@
         // Инициализация каталога
         function initCatalog() {
             filteredCars = [...allCars];
-            setDefaultDates();
             renderFilters();
             renderCars();
             setupPagination();
@@ -1161,8 +1160,9 @@
             // Сброс полей года
             document.getElementById('minYear').value = '';
             document.getElementById('maxYear').value = '';
-            // Сброс дат к значениям по умолчанию
-            setDefaultDates();
+            // Сброс дат
+            document.getElementById('startDate').value = '';
+            document.getElementById('endDate').value = '';
             applyFilters();
         }
         // Рендер автомобилей
