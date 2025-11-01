@@ -1231,6 +1231,12 @@
                 const originalImage = car.images[0];
                 const thumbnailPath = originalImage.replace('images/cars/', 'images/cars/thumbnails/').replace(/\.[^/.]+$/, '_thumb.jpg');
                 
+                // Проверяем наличие дополнительных характеристик
+                const hasFeatures = (car.driveType && car.driveType !== 'н/д') || 
+                                  (car.mileage && car.mileage !== 'н/д') || 
+                                  (car.includedMileage && car.includedMileage !== 'н/д') || 
+                                  (car.insurance && car.insurance !== 'н/д');
+                
                 return `
                 <div class="car-card" onclick="window.location.href='car-detail.html?id=${car.id}'">
                     <div class="car-image">
@@ -1247,11 +1253,11 @@
                         <p class="car-details">${car.year} год • ${car.engine}L ${car.fuelType} • ${car.transmission === 'automatic' ? 'АКПП' : 'МКПП'}</p>
                         <p class="car-details">${car.seats} мест • ${car.fuelType}</p>
                         <div class="car-features">
-                            <!-- Убрано: двери и кондиционер -->
                             ${car.driveType && car.driveType !== 'н/д' ? `<span class="car-feature">Привод: ${car.driveType}</span>` : ''}
                             ${car.mileage && car.mileage !== 'н/д' ? `<span class="car-feature">Пробег: ${car.mileage}</span>` : ''}
                             ${car.includedMileage && car.includedMileage !== 'н/д' ? `<span class="car-feature">Вкл. пробег: ${car.includedMileage}</span>` : ''}
                             ${car.insurance && car.insurance !== 'н/д' ? `<span class="car-feature">Страховка: ${car.insurance}</span>` : ''}
+                            ${!hasFeatures ? '<span class="car-feature" style="visibility: hidden;">-</span>' : ''}
                         </div>
                         <div class="car-price">
                             от ${car.prices["21"]} ₽ <span class="car-price-period">/ день</span>
