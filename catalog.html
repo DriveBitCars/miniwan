@@ -1236,6 +1236,7 @@
                                   (car.mileage && car.mileage !== 'н/д') || 
                                   (car.includedMileage && car.includedMileage !== 'н/д') || 
                                   (car.insurance && car.insurance !== 'н/д');
+                const hasInsurance = car.insurance && car.insurance !== 'н/д';
                 
                 return `
                 <div class="car-card" onclick="window.location.href='car-detail.html?id=${car.id}'">
@@ -1256,7 +1257,7 @@
                             ${car.driveType && car.driveType !== 'н/д' ? `<span class="car-feature">Привод: ${car.driveType}</span>` : ''}
                             ${car.mileage && car.mileage !== 'н/д' ? `<span class="car-feature">Пробег: ${car.mileage}</span>` : ''}
                             ${car.includedMileage && car.includedMileage !== 'н/д' ? `<span class="car-feature">Вкл. пробег: ${car.includedMileage}</span>` : ''}
-                            ${car.insurance && car.insurance !== 'н/д' ? `<span class="car-feature">Страховка: ${car.insurance}</span>` : ''}
+                            ${hasInsurance ? `<span class="car-feature">Страховка: ${car.insurance}</span>` : '<span class="car-feature" style="visibility: hidden;">Страховка: -</span>'}
                             ${!hasFeatures ? '<span class="car-feature" style="visibility: hidden;">-</span>' : ''}
                         </div>
                         <div class="car-price">
