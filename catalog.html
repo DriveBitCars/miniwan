@@ -248,6 +248,8 @@
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
         .car-card:hover {
             transform: translateY(-5px);
@@ -289,6 +291,9 @@
         }
         .car-info {
             padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
         .car-title {
             font-size: 1.2rem;
@@ -320,6 +325,7 @@
             font-weight: bold;
             color: #8B5A2B;
             margin: 12px 0 8px 0;
+            margin-top: auto;
         }
         .car-price-period {
             font-size: 0.85rem;
@@ -499,10 +505,42 @@
                 font-size: 20px;
             }
             .cars-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
             .car-image {
-                height: 220px;
+                height: 150px;
+            }
+            .car-title {
+                font-size: 0.95rem;
+                margin: 0 0 5px 0;
+            }
+            .car-details {
+                font-size: 0.75rem;
+                margin: 4px 0;
+            }
+            .car-info {
+                padding: 10px;
+            }
+            .car-feature {
+                font-size: 0.65rem;
+                padding: 2px 5px;
+            }
+            .car-price {
+                font-size: 1.1rem;
+                margin: 8px 0 5px 0;
+            }
+            .car-price-period {
+                font-size: 0.75rem;
+            }
+            .book-btn {
+                padding: 8px;
+                font-size: 0.85rem;
+                margin-top: 5px;
+            }
+            /* Скрываем залог в мобильной версии */
+            .car-deposit {
+                display: none;
             }
         }
         @media (max-width: 480px) {
@@ -521,10 +559,23 @@
             .cars-grid {
                 margin-left: 5px;
                 margin-right: 5px;
-                gap: 15px;
+                gap: 8px;
+                grid-template-columns: repeat(2, 1fr);
             }
             .car-image {
-                height: 200px;
+                height: 130px;
+            }
+            .car-title {
+                font-size: 0.85rem;
+            }
+            .car-details {
+                font-size: 0.7rem;
+            }
+            .car-feature {
+                font-size: 0.6rem;
+            }
+            .car-price {
+                font-size: 1rem;
             }
         }
         footer {
@@ -1180,6 +1231,13 @@
                 const originalImage = car.images[0];
                 const thumbnailPath = originalImage.replace('images/cars/', 'images/cars/thumbnails/').replace(/\.[^/.]+$/, '_thumb.jpg');
                 
+                // Проверяем наличие дополнительных характеристик
+                const hasFeatures = (car.driveType && car.driveType !== 'н/д') || 
+                                  (car.mileage && car.mileage !== 'н/д') || 
+                                  (car.includedMileage && car.includedMileage !== 'н/д') || 
+                                  (car.insurance && car.insurance !== 'н/д');
+                const hasInsurance = car.insurance && car.insurance !== 'н/д';
+                
                 return `
                 <div class="car-card" onclick="window.location.href='car-detail.html?id=${car.id}'">
                     <div class="car-image">
@@ -1196,16 +1254,16 @@
                         <p class="car-details">${car.year} год • ${car.engine}L ${car.fuelType} • ${car.transmission === 'automatic' ? 'АКПП' : 'МКПП'}</p>
                         <p class="car-details">${car.seats} мест • ${car.fuelType}</p>
                         <div class="car-features">
-                            <!-- Убрано: двери и кондиционер -->
                             ${car.driveType && car.driveType !== 'н/д' ? `<span class="car-feature">Привод: ${car.driveType}</span>` : ''}
                             ${car.mileage && car.mileage !== 'н/д' ? `<span class="car-feature">Пробег: ${car.mileage}</span>` : ''}
                             ${car.includedMileage && car.includedMileage !== 'н/д' ? `<span class="car-feature">Вкл. пробег: ${car.includedMileage}</span>` : ''}
-                            ${car.insurance && car.insurance !== 'н/д' ? `<span class="car-feature">Страховка: ${car.insurance}</span>` : ''}
+                            ${hasInsurance ? `<span class="car-feature">Страховка: ${car.insurance}</span>` : '<span class="car-feature" style="visibility: hidden;">Страховка: -</span>'}
+                            ${!hasFeatures ? '<span class="car-feature" style="visibility: hidden;">-</span>' : ''}
                         </div>
                         <div class="car-price">
                             от ${car.prices["21"]} ₽ <span class="car-price-period">/ день</span>
                         </div>
-                        <div class="car-details">Залог: ${car.deposit} ₽</div>
+                        <div class="car-details car-deposit">Залог: ${car.deposit} ₽</div>
                         <button class="btn btn-primary book-btn" onclick="event.stopPropagation(); bookCar(${car.id})">
                             Забронировать
                         </button>
