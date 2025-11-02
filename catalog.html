@@ -966,10 +966,12 @@
             const container = document.getElementById('brandFilter');
             container.innerHTML = brands.map(brand => {
                 const count = allCars.filter(car => car.brand === brand).length;
+                // Создаем безопасный id, заменяя дефисы на подчеркивания
+                const safeId = brand.replace(/-/g, '_');
                 return `
                     <div class="filter-option">
-                        <input type="checkbox" id="brand-${brand}" value="${brand}" onchange="handleFilterChange()">
-                        <label for="brand-${brand}">${brand}</label>
+                        <input type="checkbox" id="brand-${safeId}" value="${brand}" onchange="handleFilterChange()">
+                        <label for="brand-${safeId}">${brand}</label>
                         <span class="filter-option-count">(${count})</span>
                     </div>
                 `;
