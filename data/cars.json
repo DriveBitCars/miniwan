@@ -1,455 +1,5 @@
 [
   {
-    "id": 1,
-    "brand": "Renault",
-    "model": "Scenic",
-    "year": 2020,
-    "engine": "1.5",
-    "transmission": "automatic",
-    "fuelType": "Бензин",
-    "seats": 7,
-    "prices": {
-      "1": 5490,
-      "4": 5215,
-      "7": 4941,
-      "14": 4666,
-      "21": 4392
-    },
-    "deposit": 10000,
-    "rentalRules": {
-      "minExperience": 3,
-      "minAge": 23
-    },
-    "isPopular": false,
-    "description": "Отличный семейный минивэн на 7 человек. Автомобиль прекрасно выглядит и в отличном техническом состоянии.",
-    "features": [
-      "Климат-контроль",
-      "Кожаный салон",
-      "Панорамная крыша",
-      "Камеры кругового обзора",
-      "Подогрев сидений",
-      "Apple CarPlay",
-      "Android Auto"
-    ],
-    "images": [
-      "images/cars/001-1.jpg",
-      "images/cars/001-2.jpg",
-      "images/cars/001-3.jpg",
-      "images/cars/001-5.jpg",
-      "images/cars/001-4.jpg"
-    ],
-    "owner": {
-      "name": "Алексей",
-      "rating": 4.9,
-      "carsCount": 3,
-      "rentalsCount": 47
-    },
-    "location": "Москва, ЦАО",
-    "available": true,
-    "driveType": "н/д",
-    "mileage": "н/д",
-    "includedMileage": "н/д",
-    "insurance": "н/д",
-    "availability": {
-      "startDate": "2026-10-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
-    "id": 2,
-    "brand": "Mercedes-Benz",
-    "model": "Vito",
-    "year": 2006,
-    "engine": "2.1",
-    "transmission": "manual",
-    "fuelType": "Дизель",
-    "seats": 7,
-    "prices": {
-      "1": 4000,
-      "4": 3800,
-      "7": 3600,
-      "14": 3400,
-      "21": 3200
-    },
-    "deposit": 10000,
-    "rentalRules": {
-      "minExperience": 3,
-      "minAge": 23
-    },
-    "isPopular": false,
-    "description": "Комфортабельный, экономичный   микроавтобус Мерседес Вито W639, 6+1 мест, 6МКПП, дизель. Просторный салон, в салоне TV с USB, две розетки на 220V для зарядки телефонов, планшетов и маломощных электроприборов, кондиционер, мультимедиа с WI-FI, фаркоп, рейлинги на крыше. Отличное состояние по технической части и внешнему виду. На всех сиденьях ремни безопасности. Сдаётся в аренду чистым, с полным баком топлива. Страховка ОСАГО без ограничений. ДВА ДЕТСКИХ  БУСТЕРА.",
-    "features": [
-      "Климат-контроль",
-      "Круиз-контроль",
-      "Парктроники",
-      "Электропривод дверей",
-      "Система стабилизации",
-      "Мультируль",
-      "Сдвижные двери"
-    ],
-    "images": [
-      "images/cars/002-1.jpg"
-    ],
-    "owner": {
-      "name": "Мария",
-      "rating": 4.8,
-      "carsCount": 2,
-      "rentalsCount": 32
-    },
-    "location": "Москва, СВАО",
-    "available": true,
-    "driveType": "н/д",
-    "mileage": "н/д",
-    "includedMileage": "н/д",
-    "insurance": "н/д",
-    "availability": {
-      "startDate": "2025-11-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
-    "id": 3,
-    "brand": "GAC",
-    "model": "M8",
-    "year": 2021,
-    "engine": "1.5",
-    "transmission": "automatic",
-    "fuelType": "Бензин",
-    "seats": 7,
-    "prices": {
-      "1": 10000,
-      "4": 9750,
-      "7": 9500,
-      "14": 9250,
-      "21": 9000
-    },
-    "deposit": 10000,
-    "rentalRules": {
-      "minExperience": 3,
-      "minAge": 23
-    },
-    "isPopular": false,
-    "description": "GAC M6 — простор, комфорт и статус в каждой поездке.\r\n\r\nЭтот современный минивэн сочетает в себе солидный дизайн, функциональность и технологичность. Широкая решётка радиатора, продуманные линии кузова и светодиодная оптика подчеркивают уверенный характер автомобиля, созданного для больших семей и деловых поездок.\r\n\r\nСалон встречает атмосферой премиального уровня: просторное расположение кресел, качественные материалы отделки, мультимедийная система с большим экраном и интеллектуальные системы помощи водителю. Благодаря гибкой трансформации сидений GAC M6 легко подстраивается под любые задачи — от комфортной поездки по городу до дальнего путешествия всей компанией.\r\n\r\nGAC M6 — выбор тех, кто ценит пространство, удобство и современные технологии в одном автомобиле.",
-    "features": [
-      "Память сидений",
-      "Массаж сидений",
-      "Вентиляция сидений",
-      "Панорамная крыша",
-      "Система ночного видения",
-      "Burmester аудиосистема",
-      "Электропривод дверей"
-    ],
-    "images": [
-      "images/cars/003-1.jpg",
-      "images/cars/003-2.jpg",
-      "images/cars/003-3.jpg",
-      "images/cars/003-4.jpg",
-      "images/cars/003-5.jpg"
-    ],
-    "owner": {
-      "name": "Дмитрий",
-      "rating": 5.0,
-      "carsCount": 5,
-      "rentalsCount": 89
-    },
-    "location": "Москва, ЗАО",
-    "available": true,
-    "driveType": "н/д",
-    "mileage": "н/д",
-    "includedMileage": "н/д",
-    "insurance": "н/д",
-    "availability": {
-      "startDate": "2026-10-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
-    "id": 4,
-    "brand": "Mercedes-Benz",
-    "model": "V-Класс",
-    "year": 2014,
-    "engine": "2.2",
-    "transmission": "automatic",
-    "fuelType": "Дизель",
-    "seats": 7,
-    "prices": {
-      "1": 6990,
-      "4": 6640,
-      "7": 6291,
-      "14": 5941,
-      "21": 5592
-    },
-    "deposit": 20000,
-    "rentalRules": {
-      "minExperience": 3,
-      "minAge": 23
-    },
-    "isPopular": false,
-    "description": "Mercedes-Benz V-class - семиместный микроавтобус, в максимальной комплектации, сочетаюший в себе премиальный комфорт, передовые технологии и исключительную вместимость. Это не просто автомобиль — это Ваш идеальный спутник для семейных путешествий, деловых поездок и любых приключений на дороге.",
-    "features": [
-      "Климат-контроль",
-      "Камера заднего вида",
-      "Система помощи при парковке",
-      "Электропривод боковых дверей",
-      "Складывающиеся сиденья",
-      "Bluetooth",
-      "USB порты"
-    ],
-    "images": [
-      "images/cars/004-1.jpg",
-      "images/cars/004-2.jpg",
-      "images/cars/004-3.jpg",
-      "images/cars/004-4.jpg",
-      "images/cars/004-5.jpg"
-    ],
-    "owner": {
-      "name": "Сергей",
-      "rating": 4.7,
-      "carsCount": 1,
-      "rentalsCount": 18
-    },
-    "location": "Москва, ЮАО",
-    "available": true,
-    "driveType": "н/д",
-    "mileage": "н/д",
-    "includedMileage": "н/д",
-    "insurance": "н/д",
-    "availability": {
-      "startDate": "2025-11-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
-    "id": 5,
-    "brand": "Hyundai",
-    "model": "H-1",
-    "year": 2019,
-    "engine": "2.5",
-    "transmission": "automatic",
-    "fuelType": "Дизель",
-    "seats": 8,
-    "prices": {
-      "1": 6590,
-      "4": 6260,
-      "7": 5931,
-      "14": 5601,
-      "21": 5272
-    },
-    "deposit": 20000,
-    "rentalRules": {
-      "minExperience": 3,
-      "minAge": 23
-    },
-    "isPopular": false,
-    "description": "Аренда / Прокат HYUNDAI H-1 2019\r\n🚗 Доставка машины в любую точку города в течение 30-60 минут.\r\n✅ Оформление договора по двум документам: паспорту и водительскому удостоверению\r\n⚙️ Технические характеристики:\r\nОбъем:: 2.5 л\r\nМощность:: 175 л.с.\r\nКоробка: Автомат\r\nТип двигателя: дизельный\r\nТопливо: ДТ\r\nПривод: Полный\r\nРасход: 10.6 л",
-    "features": [
-      "Двухзонный климат-контроль",
-      "Панорамная крыша",
-      "Вентиляция передних сидений",
-      "Камеры кругового обзора",
-      "Бесключевой доступ",
-      "Запуск с кнопки",
-      "Apple CarPlay"
-    ],
-    "images": [
-      "images/cars/005-1.jpg",
-      "images/cars/005-2.jpg",
-      "images/cars/005-3.jpg",
-      "images/cars/005-4.jpg"
-    ],
-    "owner": {
-      "name": "Анна",
-      "rating": 4.8,
-      "carsCount": 1,
-      "rentalsCount": 41
-    },
-    "location": "Москва, САО",
-    "available": true,
-    "driveType": "н/д",
-    "mileage": "н/д",
-    "includedMileage": "н/д",
-    "insurance": "н/д",
-    "availability": {
-      "startDate": "2026-10-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
-    "id": 6,
-    "brand": "BYD",
-    "model": "Song Pro",
-    "year": 2021,
-    "engine": "1.5",
-    "transmission": "automatic",
-    "fuelType": "Бензин",
-    "seats": 7,
-    "prices": {
-      "1": 4490,
-      "4": 4265,
-      "7": 4041,
-      "14": 3816,
-      "21": 3592
-    },
-    "deposit": 15000,
-    "rentalRules": {
-      "minExperience": 3,
-      "minAge": 23
-    },
-    "isPopular": false,
-    "description": "🚗Аренда авто для туристических целей — ваш комфорт в путешествии по Калининградской области! Путешествуйте семью? Забудьте о тесноте! Ваш комфорт — наш BYD SONG MAX 🚙💨 \r\nСобираетесь в отпуск с детьми, друзьями или большой семьей? \r\nПора отказаться от двух машин и неудобных раскладушек в багажнике! BYD SONG MAX 7 мест — это не просто прокат авто, это ваш личный пространство комфорта: \r\n🪑Просторный салон: 7 полноценных кресел для взрослых. Каждый пассажир — на первом месте! \r\n🧳 Огромный багажник: Вместит все чемоданы, коляску и даже покупки из поездки. \r\n🌬 Климат-контроль: Отдельные зоны для водителя, переднего пассажира и задних рядов. Больше никаких споров о температуре!\r\n 📱 Мультимедиа: Большой сенсорный экран, камера 360°, навигация и музыка для всей компании. Почему выбирают именно наш SONG MAX? \r\nПотому что он в максимальной комплектации: кожаный салон, панорамная крыша, всевозможные ассистенты и идеальная чистота. \r\n➡ Забронируйте ваше путешествие без компромиссов уже сегодня! Преимущества автомобиля: — много места — диодные фары — мультимедиа — кондиционер — bluetooth и aux --- Ваша свобода перемещений начинается здесь! \r\n💡Для кого? -Поездки на отдых с семьей или друзьями. -Бизнес-мероприятия и встречи — подчеркните ваш статус. -Трансфер, фотосессия, свадьба .",
-    "features": [
-      "Цифровая приборная панель",
-      "Двухзонный климат-контроль",
-      "Электропривод дверей",
-      "Система безопасности",
-      "Современная мультимедиа",
-      "Подогрев руля",
-      "Светодиодная оптика"
-    ],
-    "images": [
-      "images/cars/006-1.jpg",
-      "images/cars/006-2.jpg",
-      "images/cars/006-3.jpg",
-      "images/cars/006-4.jpg",
-      "images/cars/006-5.jpg"
-    ],
-    "owner": {
-      "name": "Игорь",
-      "rating": 4.6,
-      "carsCount": 1,
-      "rentalsCount": 12
-    },
-    "location": "Москва, ЮЗАО",
-    "available": true,
-    "driveType": "н/д",
-    "mileage": "н/д",
-    "includedMileage": "н/д",
-    "insurance": "н/д",
-    "availability": {
-      "startDate": "2026-10-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
-    "id": 7,
-    "brand": "Citroen",
-    "model": "C4 Picasso",
-    "year": 2014,
-    "engine": "1.6",
-    "transmission": "automatic",
-    "fuelType": "Дизель",
-    "seats": 7,
-    "prices": {
-      "1": 4490,
-      "4": 4265,
-      "7": 4041,
-      "14": 3816,
-      "21": 3592
-    },
-    "deposit": 10000,
-    "rentalRules": {
-      "minExperience": 3,
-      "minAge": 23
-    },
-    "isPopular": false,
-    "description": "Стильный, комфортный и современный  МИНИВЭН для большой компании до 7ми человек.\r\n\r\nКомплектация:\r\n2014 г.в, | 1.6 | АКПП | 116 л.с | Минивэн\r\n• Кондиционер\r\n• Климат-контроль\r\n• Круиз-контроль\r\n• Бортовой компьютер\r\n• Зеркала с электроприводом и обогревом\r\n• Подогрев сидений и руля\r\n• Парктроники задние\r\n• Камера заднего обзора\r\n• Мультимедийная система с радио\r\n• Управление аудиосистемой на руле\r\n• Полноцветный ЖК-монитор \r\n• Hands free\r\n• Разъемы USB, AUX для подключения внешних устройств. \r\n\r\nДля Вашего комфорта, в автомобиле размещены:\r\n- Крепёж для телефона\r\n- Адаптер для зарядки\r\n- Аптечка\r\n- Баллон герметик для шин\r\n- Знак аварийной остановки\r\n- Запасное колесо\r\n- Видеорегистратор\r\n- Детский бустер/детское кресло (по запросу)",
-    "features": [
-      "Кондиционер",
-      "Аудиосистема",
-      "Парктроник",
-      "Круиз-контроль",
-      "Электростеклоподъемники",
-      "Центральный замок",
-      "Регулируемые сиденья"
-    ],
-    "images": [
-      "images/cars/007-1.jpg",
-      "images/cars/007-2.jpg",
-      "images/cars/007-3.jpg",
-      "images/cars/007-4.jpg"
-    ],
-    "owner": {
-      "name": "Сергей",
-      "rating": 4.5,
-      "carsCount": 1,
-      "rentalsCount": 16
-    },
-    "location": "Москва, ВАО",
-    "available": true,
-    "driveType": "н/д",
-    "mileage": "н/д",
-    "includedMileage": "н/д",
-    "insurance": "н/д",
-    "availability": {
-      "startDate": "2026-10-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
-    "id": 8,
-    "brand": "Chevrolet",
-    "model": "Orlando",
-    "year": 2012,
-    "engine": "2.0",
-    "transmission": "automatic",
-    "fuelType": "Бензин",
-    "seats": 6,
-    "prices": {
-      "1": 5490,
-      "4": 5215,
-      "7": 4941,
-      "14": 4666,
-      "21": 4392
-    },
-    "deposit": 20000,
-    "rentalRules": {
-      "minExperience": 3,
-      "minAge": 23
-    },
-    "isPopular": false,
-    "description": "МИНИВЭН для компании из 6-7 человек CHEVROLET ORLANDO\r\n\r\n- Двигатель 1.8 / 141 л.с. / Бензин / Коробка передач Автомат, 5 AT \r\n- Год выпуска 2012\r\n- Передний привод\r\n- Комфортное авто для большой компании\r\n- В авто размещены: держатель для телефона, видеорегистратор, аптечка, знак аварийной остановки, огнетушитель, запасное колесо. \r\n\r\nДоставка в любую точку по городу 350р.\r\nДоставка в Аэропорт 850р.",
-    "features": [
-      "Климат-контроль",
-      "SYNC мультимедиа",
-      "Камера заднего вида",
-      "Датчики парковки",
-      "Электропривод дверей",
-      "Регулируемый руль",
-      "Подогрев зеркал"
-    ],
-    "images": [
-      "images/cars/008-1.jpg",
-      "images/cars/008-2.jpg",
-      "images/cars/008-3.jpg",
-      "images/cars/008-4.jpg",
-      "images/cars/008-5.jpg"
-    ],
-    "owner": {
-      "name": "Павел",
-      "rating": 4.7,
-      "carsCount": 1,
-      "rentalsCount": 29
-    },
-    "location": "Москва, СЗАО",
-    "available": true,
-    "driveType": "Полный",
-    "mileage": "40000",
-    "includedMileage": "250",
-    "insurance": "КАСКО",
-    "availability": {
-      "startDate": "2026-10-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
     "id": 9,
     "brand": "Mercedes-Benz",
     "model": "V-Класс",
@@ -511,6 +61,67 @@
   },
   {
     "id": 10,
+    "brand": "Hyundai",
+    "model": "Grand Starex",
+    "year": 2008,
+    "engine": "2.5",
+    "transmission": "automatic",
+    "fuelType": "Дизель",
+    "seats": 8,
+    "prices": {
+      "1": 7500,
+      "4": 7125,
+      "7": 6750,
+      "14": 6375,
+      "21": 6000
+    },
+    "deposit": 20000,
+    "rentalRules": {
+      "minExperience": 3,
+      "minAge": 25
+    },
+    "isPopular": false,
+    "description": "🔥🔥ВНИМАНИЕ!🔥🔥 САМАЯ ВЫГОДНАЯ ЦЕНА АРЕНДЫ БЕЗ ВОДИТЕЛЯ В МОСКВЕ! 🔥🔥🔥 КОРОБКА АВТОМАТ, КАМЕРА ЗАДНЕГО ВИДА, САЛОН 9 МЕСТ 🔥🔥🔥 Вашему вниманию предлагается в аренду комфортабельный микроавтобус корейского автопрома Hyundai Grand Starex (H-1). Салон трансформер, все сиденья двигаются по салазкам, разворачиваются на 180 градусов, чем очень удобны для дальних поездок. Дизельный двигатель значительно сэкономит Ваш бюджет.",
+    "features": [
+      "Климат-контроль",
+      "Камера заднего вида",
+      "Салон трансформер",
+      "Коробка автомат",
+      "Парктроники",
+      "Сиденья на салазках",
+      "Разворачивающиеся сиденья",
+      "Дизельный двигатель"
+    ],
+    "images": [
+      "images/cars/010-1.jpg",
+      "images/cars/010-2.jpg",
+      "images/cars/010-3.jpg",
+      "images/cars/010-4.jpg",
+      "images/cars/010-5.jpg",
+      "images/cars/010-6.jpg",
+      "images/cars/010-7.jpg",
+      "images/cars/010-8.jpg"
+    ],
+    "owner": {
+      "name": "Александр Бойко",
+      "rating": 5.0,
+      "carsCount": 12,
+      "rentalsCount": 13
+    },
+    "location": "Москва, Раменки, Мичуринский пр-кт, д 39",
+    "available": true,
+    "driveType": "Задний",
+    "mileage": "н/д",
+    "includedMileage": "300",
+    "insurance": "ОСАГО (Мультидрайв)",
+    "availability": {
+      "startDate": "2025-11-01",
+      "endDate": "2030-12-30",
+      "isAvailable": true
+    }
+  },
+  {
+    "id": 11,
     "brand": "Dodge",
     "model": "Grand Caravan",
     "year": 2004,
@@ -538,14 +149,14 @@
       "Парктроник"
     ],
     "images": [
-      "images/cars/010-1.jpg",
-      "images/cars/010-2.jpg",
-      "images/cars/010-3.jpg",
-      "images/cars/010-4.jpg",
-      "images/cars/010-5.jpg",
-      "images/cars/010-6.jpg",
-      "images/cars/010-7.jpg",
-      "images/cars/010-8.jpg"
+      "images/cars/011-1.jpg",
+      "images/cars/011-2.jpg",
+      "images/cars/011-3.jpg",
+      "images/cars/011-4.jpg",
+      "images/cars/011-5.jpg",
+      "images/cars/011-6.jpg",
+      "images/cars/011-7.jpg",
+      "images/cars/011-8.jpg"
     ],
     "owner": {
       "name": "Роман",
@@ -566,7 +177,7 @@
     }
   },
   {
-    "id": 11,
+    "id": 12,
     "brand": "Chrysler",
     "model": "Voyager",
     "year": 2003,
@@ -593,11 +204,11 @@
       "Круиз-контроль"
     ],
     "images": [
-      "images/cars/011-1.jpg",
-      "images/cars/011-2.jpg",
-      "images/cars/011-3.jpg",
-      "images/cars/011-4.jpg",
-      "images/cars/011-5.jpg"
+      "images/cars/012-1.jpg",
+      "images/cars/012-2.jpg",
+      "images/cars/012-3.jpg",
+      "images/cars/012-4.jpg",
+      "images/cars/012-5.jpg"
     ],
     "owner": {
       "name": "Алан",
@@ -618,7 +229,7 @@
     }
   },
   {
-    "id": 12,
+    "id": 13,
     "brand": "Chery",
     "model": "Tiggo 8 Pro",
     "year": 2023,
@@ -645,10 +256,10 @@
       "Круиз-контроль"
     ],
     "images": [
-      "images/cars/012-1.jpg",
-      "images/cars/012-2.jpg",
-      "images/cars/012-3.jpg",
-      "images/cars/012-4.jpg"
+      "images/cars/013-1.jpg",
+      "images/cars/013-2.jpg",
+      "images/cars/013-3.jpg",
+      "images/cars/013-4.jpg"
     ],
     "owner": {
       "name": "Алан",
@@ -669,7 +280,7 @@
     }
   },
   {
-    "id": 13,
+    "id": 14,
     "brand": "Kia",
     "model": "Carnival",
     "year": 2021,
@@ -698,15 +309,15 @@
       "Комплектация: Nobless 9 seats"
     ],
     "images": [
-      "images/cars/013-1.jpg",
-      "images/cars/013-2.jpg",
-      "images/cars/013-3.jpg",
-      "images/cars/013-4.jpg",
-      "images/cars/013-5.jpg",
-      "images/cars/013-6.jpg",
-      "images/cars/013-7.jpg",
-      "images/cars/013-8.jpg",
-      "images/cars/013-9.jpg"
+      "images/cars/014-1.jpg",
+      "images/cars/014-2.jpg",
+      "images/cars/014-3.jpg",
+      "images/cars/014-4.jpg",
+      "images/cars/014-5.jpg",
+      "images/cars/014-6.jpg",
+      "images/cars/014-7.jpg",
+      "images/cars/014-8.jpg",
+      "images/cars/014-9.jpg"
     ],
     "owner": {
       "name": "Елена",
@@ -727,7 +338,7 @@
     }
   },
   {
-    "id": 14,
+    "id": 15,
     "brand": "Kia",
     "model": "Carnival",
     "year": 2019,
@@ -756,14 +367,14 @@
       "Комплектация: Nobless 9 seats"
     ],
     "images": [
-      "images/cars/014-1.jpg",
-      "images/cars/014-2.jpg",
-      "images/cars/014-3.jpg",
-      "images/cars/014-4.jpg",
-      "images/cars/014-5.jpg",
-      "images/cars/014-6.jpg",
-      "images/cars/014-7.jpg",
-      "images/cars/014-8.jpg"
+      "images/cars/015-1.jpg",
+      "images/cars/015-2.jpg",
+      "images/cars/015-3.jpg",
+      "images/cars/015-4.jpg",
+      "images/cars/015-5.jpg",
+      "images/cars/015-6.jpg",
+      "images/cars/015-7.jpg",
+      "images/cars/015-8.jpg"
     ],
     "owner": {
       "name": "Елена",
@@ -784,7 +395,7 @@
     }
   },
   {
-    "id": 15,
+    "id": 16,
     "brand": "Kia",
     "model": "Carnival",
     "year": 2020,
@@ -815,12 +426,12 @@
       "Камера заднего вида"
     ],
     "images": [
-      "images/cars/015-1.jpg",
-      "images/cars/015-2.jpg",
-      "images/cars/015-3.jpg",
-      "images/cars/015-4.jpg",
-      "images/cars/015-5.jpg",
-      "images/cars/015-6.jpg"
+      "images/cars/016-1.jpg",
+      "images/cars/016-2.jpg",
+      "images/cars/016-3.jpg",
+      "images/cars/016-4.jpg",
+      "images/cars/016-5.jpg",
+      "images/cars/016-6.jpg"
     ],
     "owner": {
       "name": "Кирилл",
@@ -841,7 +452,7 @@
     }
   },
   {
-    "id": 16,
+    "id": 17,
     "brand": "Kia",
     "model": "Carnival",
     "year": 2019,
@@ -868,11 +479,11 @@
       "Камера заднего вида"
     ],
     "images": [
-      "images/cars/016-1.jpg",
-      "images/cars/016-2.jpg",
-      "images/cars/016-3.jpg",
-      "images/cars/016-4.jpg",
-      "images/cars/016-5.jpg"
+      "images/cars/017-1.jpg",
+      "images/cars/017-2.jpg",
+      "images/cars/017-3.jpg",
+      "images/cars/017-4.jpg",
+      "images/cars/017-5.jpg"
     ],
     "owner": {
       "name": "Елена",
@@ -893,7 +504,7 @@
     }
   },
   {
-    "id": 17,
+    "id": 18,
     "brand": "Kia",
     "model": "Carnival",
     "year": 2019,
@@ -920,15 +531,15 @@
       "Камера заднего вида"
     ],
     "images": [
-      "images/cars/017-1.jpg",
-      "images/cars/017-2.jpg",
-      "images/cars/017-3.jpg",
-      "images/cars/017-4.jpg",
-      "images/cars/017-5.jpg",
-      "images/cars/017-6.jpg",
-      "images/cars/017-7.jpg",
-      "images/cars/017-8.jpg",
-      "images/cars/017-9.jpg"
+      "images/cars/018-1.jpg",
+      "images/cars/018-2.jpg",
+      "images/cars/018-3.jpg",
+      "images/cars/018-4.jpg",
+      "images/cars/018-5.jpg",
+      "images/cars/018-6.jpg",
+      "images/cars/018-7.jpg",
+      "images/cars/018-8.jpg",
+      "images/cars/018-9.jpg"
     ],
     "owner": {
       "name": "Елена",
@@ -949,7 +560,7 @@
     }
   },
   {
-    "id": 18,
+    "id": 19,
     "brand": "Peugeot",
     "model": "Traveller",
     "year": 2023,
@@ -980,11 +591,11 @@
       "Камера заднего вида"
     ],
     "images": [
-      "images/cars/018-1.jpg",
-      "images/cars/018-2.jpg",
-      "images/cars/018-3.jpg",
-      "images/cars/018-4.jpg",
-      "images/cars/018-5.jpg"
+      "images/cars/019-1.jpg",
+      "images/cars/019-2.jpg",
+      "images/cars/019-3.jpg",
+      "images/cars/019-4.jpg",
+      "images/cars/019-5.jpg"
     ],
     "owner": {
       "name": "Роман",
@@ -1005,7 +616,7 @@
     }
   },
   {
-    "id": 19,
+    "id": 20,
     "brand": "Hyundai",
     "model": "H1",
     "year": 2021,
@@ -1029,8 +640,8 @@
     "description": "Просторный и надежный минивэн Hyundai H1 2021 года. Идеальный выбор для семейных поездок и комфортных путешествий большой компанией. Автомобиль оснащен всем необходимым для безопасной и удобной эксплуатации.",
     "features": [],
     "images": [
-      "images/cars/019-1.jpg",
-      "images/cars/019-2.jpg"
+      "images/cars/020-1.jpg",
+      "images/cars/020-2.jpg"
     ],
     "owner": {
       "name": "Роман",
@@ -1051,7 +662,7 @@
     }
   },
   {
-    "id": 20,
+    "id": 21,
     "brand": "Hyundai",
     "model": "Staria",
     "year": 2021,
@@ -1075,10 +686,10 @@
     "description": "Современный и стильный минивэн Hyundai Staria 2021 года. Просторный салон и комфортабельные сиденья делают эту модель отличным выбором для дальних поездок и городских путешествий.",
     "features": [],
     "images": [
-      "images/cars/020-1.jpg",
-      "images/cars/020-2.jpg",
-      "images/cars/020-3.jpg",
-      "images/cars/020-4.jpg"
+      "images/cars/021-1.jpg",
+      "images/cars/021-2.jpg",
+      "images/cars/021-3.jpg",
+      "images/cars/021-4.jpg"
     ],
     "owner": {
       "name": "Роман",
@@ -1099,72 +710,12 @@
     }
   },
   {
-    "id": 21,
-    "brand": "Hyundai",
-    "model": "Grand Starex",
-    "year": 2010,
-    "engine": "2.5",
-    "transmission": "manual",
-    "fuelType": "Дизель",
-    "seats": 7,
-    "prices": {
-      "1": 4000,
-      "4": 4000,
-      "7": 4000,
-      "14": 3500,
-      "21": 3500
-    },
-    "deposit": 5000,
-    "rentalRules": {
-      "minExperience": 1,
-      "minAge": 20
-    },
-    "isPopular": false,
-    "description": "Авто ухожен, обслужен, готов к работе. Условия договорные! Пишите желаемые даты и примерный пробег! Спасибо!",
-    "features": [],
-    "images": [
-      "images/cars/021-1.jpg",
-      "images/cars/021-2.jpg",
-      "images/cars/021-3.jpg",
-      "images/cars/021-4.jpg",
-      "images/cars/021-5.jpg",
-      "images/cars/021-6.jpg",
-      "images/cars/021-7.jpg",
-      "images/cars/021-8.jpg",
-      "images/cars/021-9.jpg",
-      "images/cars/021-10.jpg",
-      "images/cars/021-11.jpg",
-      "images/cars/021-12.jpg",
-      "images/cars/021-13.jpg",
-      "images/cars/021-14.jpg",
-      "images/cars/021-15.jpg",
-      "images/cars/021-16.jpg"
-    ],
-    "owner": {
-      "name": "Александр",
-      "rating": 4.8,
-      "carsCount": 2,
-      "rentalsCount": 23
-    },
-    "location": "н/д",
-    "available": true,
-    "driveType": "Задний",
-    "mileage": "н/д",
-    "includedMileage": "н/д",
-    "insurance": "ОСАГО",
-    "availability": {
-      "startDate": "2025-10-01",
-      "endDate": "2030-12-30",
-      "isAvailable": true
-    }
-  },
-  {
     "id": 22,
     "brand": "Hyundai",
     "model": "Grand Starex",
     "year": 2010,
     "engine": "2.5",
-    "transmission": "automatic",
+    "transmission": "manual",
     "fuelType": "Дизель",
     "seats": 7,
     "prices": {
@@ -1193,7 +744,67 @@
       "images/cars/022-8.jpg",
       "images/cars/022-9.jpg",
       "images/cars/022-10.jpg",
-      "images/cars/022-11.jpg"
+      "images/cars/022-11.jpg",
+      "images/cars/022-12.jpg",
+      "images/cars/022-13.jpg",
+      "images/cars/022-14.jpg",
+      "images/cars/022-15.jpg",
+      "images/cars/022-16.jpg"
+    ],
+    "owner": {
+      "name": "Александр",
+      "rating": 4.8,
+      "carsCount": 2,
+      "rentalsCount": 23
+    },
+    "location": "н/д",
+    "available": true,
+    "driveType": "Задний",
+    "mileage": "н/д",
+    "includedMileage": "н/д",
+    "insurance": "ОСАГО",
+    "availability": {
+      "startDate": "2025-10-01",
+      "endDate": "2030-12-30",
+      "isAvailable": true
+    }
+  },
+  {
+    "id": 23,
+    "brand": "Hyundai",
+    "model": "Grand Starex",
+    "year": 2010,
+    "engine": "2.5",
+    "transmission": "automatic",
+    "fuelType": "Дизель",
+    "seats": 7,
+    "prices": {
+      "1": 4000,
+      "4": 4000,
+      "7": 4000,
+      "14": 3500,
+      "21": 3500
+    },
+    "deposit": 5000,
+    "rentalRules": {
+      "minExperience": 1,
+      "minAge": 20
+    },
+    "isPopular": false,
+    "description": "Авто ухожен, обслужен, готов к работе. Условия договорные! Пишите желаемые даты и примерный пробег! Спасибо!",
+    "features": [],
+    "images": [
+      "images/cars/023-1.jpg",
+      "images/cars/023-2.jpg",
+      "images/cars/023-3.jpg",
+      "images/cars/023-4.jpg",
+      "images/cars/023-5.jpg",
+      "images/cars/023-6.jpg",
+      "images/cars/023-7.jpg",
+      "images/cars/023-8.jpg",
+      "images/cars/023-9.jpg",
+      "images/cars/023-10.jpg",
+      "images/cars/023-11.jpg"
     ],
     "owner": {
       "name": "Александр",
@@ -1214,7 +825,7 @@
     }
   },
   {
-    "id": 23,
+    "id": 24,
     "brand": "Volkswagen",
     "model": "Caravelle,",
     "year": 2008,
@@ -1241,14 +852,14 @@
       "Камера заднего вида"
     ],
     "images": [
-      "images/cars/023-1.jpg",
-      "images/cars/023-2.jpg",
-      "images/cars/023-3.jpg",
-      "images/cars/023-4.jpg",
-      "images/cars/023-5.jpg",
-      "images/cars/023-6.jpg",
-      "images/cars/023-7.jpg",
-      "images/cars/023-8.jpg"
+      "images/cars/024-1.jpg",
+      "images/cars/024-2.jpg",
+      "images/cars/024-3.jpg",
+      "images/cars/024-4.jpg",
+      "images/cars/024-5.jpg",
+      "images/cars/024-6.jpg",
+      "images/cars/024-7.jpg",
+      "images/cars/024-8.jpg"
     ],
     "owner": {
       "name": "Азад",
@@ -1268,7 +879,7 @@
     }
   },
   {
-    "id": 24,
+    "id": 25,
     "brand": "Hyundai",
     "model": "Grand Starex,",
     "year": 2008,
@@ -1295,20 +906,20 @@
       "Камера заднего вида"
     ],
     "images": [
-      "images/cars/024-1.jpg",
-      "images/cars/024-2.jpg",
-      "images/cars/024-3.jpg",
-      "images/cars/024-4.jpg",
-      "images/cars/024-5.jpg",
-      "images/cars/024-6.jpg",
-      "images/cars/024-7.jpg",
-      "images/cars/024-8.jpg",
-      "images/cars/024-9.jpg",
-      "images/cars/024-10.jpg",
-      "images/cars/024-11.jpg",
-      "images/cars/024-12.jpg",
-      "images/cars/024-13.jpg",
-      "images/cars/024-14.jpg"
+      "images/cars/025-1.jpg",
+      "images/cars/025-2.jpg",
+      "images/cars/025-3.jpg",
+      "images/cars/025-4.jpg",
+      "images/cars/025-5.jpg",
+      "images/cars/025-6.jpg",
+      "images/cars/025-7.jpg",
+      "images/cars/025-8.jpg",
+      "images/cars/025-9.jpg",
+      "images/cars/025-10.jpg",
+      "images/cars/025-11.jpg",
+      "images/cars/025-12.jpg",
+      "images/cars/025-13.jpg",
+      "images/cars/025-14.jpg"
     ],
     "owner": {
       "name": "Азад",
@@ -1328,7 +939,7 @@
     }
   },
   {
-    "id": 25,
+    "id": 26,
     "brand": "Hyundai",
     "model": "Grand Starex",
     "year": 2010,
@@ -1352,14 +963,14 @@
     "description": "Авто ухожен, обслужен, готов к работе. Условия договорные! Пишите желаемые даты и примерный пробег! Спасибо!",
     "features": [],
     "images": [
-      "images/cars/025-1.jpg",
-      "images/cars/025-2.jpg",
-      "images/cars/025-3.jpg",
-      "images/cars/025-4.jpg",
-      "images/cars/025-5.jpg",
-      "images/cars/025-6.jpg",
-      "images/cars/025-7.jpg",
-      "images/cars/025-8.jpg"
+      "images/cars/026-1.jpg",
+      "images/cars/026-2.jpg",
+      "images/cars/026-3.jpg",
+      "images/cars/026-4.jpg",
+      "images/cars/026-5.jpg",
+      "images/cars/026-6.jpg",
+      "images/cars/026-7.jpg",
+      "images/cars/026-8.jpg"
     ],
     "owner": {
       "name": "Александр",
@@ -1380,7 +991,7 @@
     }
   },
   {
-    "id": 26,
+    "id": 27,
     "brand": "Toyota",
     "model": "Sienna",
     "year": 2013,
@@ -1413,16 +1024,16 @@
       "Парктроники"
     ],
     "images": [
-      "images/cars/026-1.jpg",
-      "images/cars/026-2.jpg",
-      "images/cars/026-3.jpg",
-      "images/cars/026-4.jpg",
-      "images/cars/026-5.jpg",
-      "images/cars/026-6.jpg",
-      "images/cars/026-7.jpg",
-      "images/cars/026-8.jpg",
-      "images/cars/026-9.jpg",
-      "images/cars/026-10.jpg"
+      "images/cars/027-1.jpg",
+      "images/cars/027-2.jpg",
+      "images/cars/027-3.jpg",
+      "images/cars/027-4.jpg",
+      "images/cars/027-5.jpg",
+      "images/cars/027-6.jpg",
+      "images/cars/027-7.jpg",
+      "images/cars/027-8.jpg",
+      "images/cars/027-9.jpg",
+      "images/cars/027-10.jpg"
     ],
     "owner": {
       "name": "Сергей",
@@ -1443,7 +1054,7 @@
     }
   },
   {
-    "id": 27,
+    "id": 28,
     "brand": "Toyota",
     "model": "Sienna",
     "year": 2018,
@@ -1476,19 +1087,19 @@
       "Холодильник"
     ],
     "images": [
-      "images/cars/027-1.jpg",
-      "images/cars/027-2.jpg",
-      "images/cars/027-3.jpg",
-      "images/cars/027-4.jpg",
-      "images/cars/027-5.jpg",
-      "images/cars/027-6.jpg",
-      "images/cars/027-7.jpg",
-      "images/cars/027-8.jpg",
-      "images/cars/027-9.jpg",
-      "images/cars/027-10.jpg",
-      "images/cars/027-11.jpg",
-      "images/cars/027-12.jpg",
-      "images/cars/027-13.jpg"
+      "images/cars/028-1.jpg",
+      "images/cars/028-2.jpg",
+      "images/cars/028-3.jpg",
+      "images/cars/028-4.jpg",
+      "images/cars/028-5.jpg",
+      "images/cars/028-6.jpg",
+      "images/cars/028-7.jpg",
+      "images/cars/028-8.jpg",
+      "images/cars/028-9.jpg",
+      "images/cars/028-10.jpg",
+      "images/cars/028-11.jpg",
+      "images/cars/028-12.jpg",
+      "images/cars/028-13.jpg"
     ],
     "owner": {
       "name": "Сергей",
@@ -1509,7 +1120,7 @@
     }
   },
   {
-    "id": 28,
+    "id": 29,
     "brand": "Mitsubishi",
     "model": "Grandis",
     "year": 2007,
@@ -1540,15 +1151,15 @@
       "Доставка по адресу"
     ],
     "images": [
-      "images/cars/028-1.jpg",
-      "images/cars/028-2.jpg",
-      "images/cars/028-3.jpg",
-      "images/cars/028-4.jpg",
-      "images/cars/028-5.jpg",
-      "images/cars/028-6.jpg",
-      "images/cars/028-7.jpg",
-      "images/cars/028-8.jpg",
-      "images/cars/028-9.jpg"
+      "images/cars/029-1.jpg",
+      "images/cars/029-2.jpg",
+      "images/cars/029-3.jpg",
+      "images/cars/029-4.jpg",
+      "images/cars/029-5.jpg",
+      "images/cars/029-6.jpg",
+      "images/cars/029-7.jpg",
+      "images/cars/029-8.jpg",
+      "images/cars/029-9.jpg"
     ],
     "owner": {
       "name": "Сергей Лисицын",
@@ -1569,7 +1180,7 @@
     }
   },
   {
-    "id": 29,
+    "id": 30,
     "brand": "Hyundai",
     "model": "H1 (Grand Starex)",
     "year": 2009,
@@ -1607,23 +1218,23 @@
       "Доставка в аэропорты и по МКАД"
     ],
     "images": [
-      "images/cars/029-1.jpg",
-      "images/cars/029-2.jpg",
-      "images/cars/029-3.jpg",
-      "images/cars/029-4.jpg",
-      "images/cars/029-5.jpg",
-      "images/cars/029-6.jpg",
-      "images/cars/029-7.jpg",
-      "images/cars/029-8.jpg",
-      "images/cars/029-9.jpg",
-      "images/cars/029-10.jpg",
-      "images/cars/029-11.jpg",
-      "images/cars/029-12.jpg",
-      "images/cars/029-13.jpg",
-      "images/cars/029-14.jpg",
-      "images/cars/029-15.jpg",
-      "images/cars/029-16.jpg",
-      "images/cars/029-17.jpg"
+      "images/cars/030-1.jpg",
+      "images/cars/030-2.jpg",
+      "images/cars/030-3.jpg",
+      "images/cars/030-4.jpg",
+      "images/cars/030-5.jpg",
+      "images/cars/030-6.jpg",
+      "images/cars/030-7.jpg",
+      "images/cars/030-8.jpg",
+      "images/cars/030-9.jpg",
+      "images/cars/030-10.jpg",
+      "images/cars/030-11.jpg",
+      "images/cars/030-12.jpg",
+      "images/cars/030-13.jpg",
+      "images/cars/030-14.jpg",
+      "images/cars/030-15.jpg",
+      "images/cars/030-16.jpg",
+      "images/cars/030-17.jpg"
     ],
     "owner": {
       "name": "Юрий",
