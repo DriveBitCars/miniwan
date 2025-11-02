@@ -817,10 +817,7 @@
         async function loadCarsData() {
             try {
                 const response = await fetch('data/cars.json');
-                const carsData = await response.json();
-                // Фильтруем только доступные машины
-                allCars = carsData.filter(car => car.available !== false);
-                console.log(`Загружено ${carsData.length} машин, доступно: ${allCars.length}`);
+                allCars = await response.json();
                 initCatalog();
             } catch (error) {
                 console.error('Ошибка загрузки данных:', error);
