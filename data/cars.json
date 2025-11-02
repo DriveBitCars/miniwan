@@ -1163,13 +1163,13 @@
     "fuelType": "Дизель",
     "seats": 8,
     "prices": {
-      "1": 6000,
-      "4": 5700,
-      "7": 5400,
-      "14": 5100,
-      "21": 4800
+      "1": 8500,
+      "4": 8500,
+      "7": 8500,
+      "14": 8500,
+      "21": 8500
     },
-    "deposit": 0,
+    "deposit": 20000,
     "rentalRules": {
       "minExperience": 4,
       "minAge": 23
@@ -1191,7 +1191,7 @@
       "images/cars/022-8.jpg"
     ],
     "owner": {
-      "name": "Азад Амиров",
+      "name": "Азад",
       "rating": 4.7,
       "carsCount": 2,
       "rentalsCount": 29
@@ -1217,13 +1217,13 @@
     "fuelType": "Дизель",
     "seats": 8,
     "prices": {
-      "1": 6000,
-      "4": 5700,
-      "7": 5400,
-      "14": 5100,
-      "21": 4800
+      "1": 8500,
+      "4": 8500,
+      "7": 8500,
+      "14": 8500,
+      "21": 8500
     },
-    "deposit": 0,
+    "deposit": 20000,
     "rentalRules": {
       "minExperience": 3,
       "minAge": 25
@@ -1251,7 +1251,7 @@
       "images/cars/023-14.jpg"
     ],
     "owner": {
-      "name": "Азад Амиров",
+      "name": "Азад",
       "rating": 4.7,
       "carsCount": 2,
       "rentalsCount": 29
@@ -1365,7 +1365,7 @@
       "images/cars/025-10.jpg"
     ],
     "owner": {
-      "name": "Сергей Лисицын",
+      "name": "Сергей",
       "rating": 4.9,
       "carsCount": 8,
       "rentalsCount": 178
@@ -1431,7 +1431,7 @@
       "images/cars/026-13.jpg"
     ],
     "owner": {
-      "name": "Сергей Лисицын",
+      "name": "Сергей",
       "rating": 4.9,
       "carsCount": 8,
       "rentalsCount": 178
@@ -1566,7 +1566,7 @@
       "images/cars/028-17.jpg"
     ],
     "owner": {
-      "name": "Владелец",
+      "name": "Юрий",
       "rating": 4.9,
       "carsCount": 1,
       "rentalsCount": 10
