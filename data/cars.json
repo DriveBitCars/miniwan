@@ -45,7 +45,7 @@
       "rentalsCount": 47
     },
     "location": "Москва, ЦАО",
-    "available": true,
+    "available": false,
     "driveType": "н/д",
     "mileage": "н/д",
     "includedMileage": "н/д",
@@ -53,7 +53,7 @@
     "availability": {
       "startDate": "2026-10-01",
       "endDate": "2030-12-30",
-      "isAvailable": true
+      "isAvailable": false
     }
   },
   {
@@ -98,7 +98,7 @@
       "rentalsCount": 32
     },
     "location": "Москва, СВАО",
-    "available": true,
+    "available": false,
     "driveType": "н/д",
     "mileage": "н/д",
     "includedMileage": "н/д",
@@ -106,7 +106,7 @@
     "availability": {
       "startDate": "2026-10-01",
       "endDate": "2030-12-30",
-      "isAvailable": true
+      "isAvailable": false
     }
   },
   {
@@ -155,7 +155,7 @@
       "rentalsCount": 89
     },
     "location": "Москва, ЗАО",
-    "available": true,
+    "available": false,
     "driveType": "н/д",
     "mileage": "н/д",
     "includedMileage": "н/д",
@@ -163,7 +163,7 @@
     "availability": {
       "startDate": "2026-10-01",
       "endDate": "2030-12-30",
-      "isAvailable": true
+      "isAvailable": false
     }
   },
   {
@@ -212,7 +212,7 @@
       "rentalsCount": 18
     },
     "location": "Москва, ЮАО",
-    "available": true,
+    "available": false,
     "driveType": "н/д",
     "mileage": "н/д",
     "includedMileage": "н/д",
@@ -220,7 +220,7 @@
     "availability": {
       "startDate": "2026-10-01",
       "endDate": "2030-12-30",
-      "isAvailable": true
+      "isAvailable": false
     }
   },
   {
@@ -268,7 +268,7 @@
       "rentalsCount": 41
     },
     "location": "Москва, САО",
-    "available": true,
+    "available": false,
     "driveType": "н/д",
     "mileage": "н/д",
     "includedMileage": "н/д",
@@ -276,7 +276,7 @@
     "availability": {
       "startDate": "2026-10-01",
       "endDate": "2030-12-30",
-      "isAvailable": true
+      "isAvailable": false
     }
   },
   {
@@ -325,7 +325,7 @@
       "rentalsCount": 12
     },
     "location": "Москва, ЮЗАО",
-    "available": true,
+    "available": false,
     "driveType": "н/д",
     "mileage": "н/д",
     "includedMileage": "н/д",
@@ -333,7 +333,7 @@
     "availability": {
       "startDate": "2026-10-01",
       "endDate": "2030-12-30",
-      "isAvailable": true
+      "isAvailable": false
     }
   },
   {
@@ -381,7 +381,7 @@
       "rentalsCount": 16
     },
     "location": "Москва, ВАО",
-    "available": true,
+    "available": false,
     "driveType": "н/д",
     "mileage": "н/д",
     "includedMileage": "н/д",
@@ -389,7 +389,7 @@
     "availability": {
       "startDate": "2026-10-01",
       "endDate": "2030-12-30",
-      "isAvailable": true
+      "isAvailable": false
     }
   },
   {
@@ -438,7 +438,7 @@
       "rentalsCount": 29
     },
     "location": "Москва, СЗАО",
-    "available": true,
+    "available": false,
     "driveType": "Полный",
     "mileage": "40000",
     "includedMileage": "250",
@@ -446,7 +446,7 @@
     "availability": {
       "startDate": "2026-10-01",
       "endDate": "2030-12-30",
-      "isAvailable": true
+      "isAvailable": false
     }
   },
   {
