@@ -898,7 +898,22 @@
         }
 
         function isValidEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            // Более строгая валидация email, соответствующая стандарту RFC 5322
+            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+            if (!emailRegex.test(email)) {
+                return false;
+            }
+            // Дополнительная проверка на минимальную длину домена
+            const parts = email.split('@');
+            if (parts.length !== 2) {
+                return false;
+            }
+            const domain = parts[1];
+            // Домен должен содержать хотя бы одну точку и иметь валидный TLD
+            if (!domain.includes('.') || domain.split('.').pop().length < 2) {
+                return false;
+            }
+            return true;
         }
 
         function isValidPhone(phone) {
@@ -962,23 +977,36 @@
                 return;
             }
 
-            // Сбор данных формы
+            // Получаем кнопку отправки перед сбором данных
+            const submitButton = document.querySelector('button[onclick="submitBooking()"]');
+            const originalText = submitButton.textContent;
+            
+            // Сбор и валидация данных формы
+            const emailValue = document.getElementById('email').value.trim();
+            
+            // Дополнительная проверка email перед отправкой
+            if (!isValidEmail(emailValue)) {
+                const emailField = document.getElementById('email');
+                emailField.style.borderColor = '#ff6b6b';
+                emailField.focus();
+                showError(emailField, 'Введите корректный email адрес (например: user@example.com)');
+                return;
+            }
+            
             const formData = {
                 car: currentCar,
                 dates: { start: startDate, end: endDate, days: rentalDays },
                 customer: {
-                    firstName: document.getElementById('firstName').value,
-                    lastName: document.getElementById('lastName').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    comments: document.getElementById('comments').value
+                    firstName: document.getElementById('firstName').value.trim(),
+                    lastName: document.getElementById('lastName').value.trim(),
+                    email: emailValue,
+                    phone: document.getElementById('phone').value.trim(),
+                    comments: document.getElementById('comments').value.trim()
                 },
                 total: calculateTotalAmount()
             };
 
             // Показываем индикатор загрузки
-            const submitButton = document.querySelector('button[onclick="submitBooking()"]');
-            const originalText = submitButton.textContent;
             submitButton.textContent = 'Отправка...';
             submitButton.disabled = true;
 
@@ -990,6 +1018,8 @@
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
+                        // Стандартное поле для email (Formspree требует _replyto для ответов)
+                        '_replyto': formData.customer.email,
                         // Основная информация
                         'Имя': formData.customer.firstName,
                         'Фамилия': formData.customer.lastName,
@@ -1027,12 +1057,41 @@
                     // Переход на страницу успеха
                     window.location.href = 'sucess.html';
                 } else {
-                    throw new Error('Ошибка отправки формы');
+                    // Обработка ошибок валидации от Formspree
+                    const errorData = await response.json();
+                    console.error('Ошибка отправки:', errorData);
+                    
+                    let errorMessage = 'Произошла ошибка при отправке формы.';
+                    
+                    if (errorData.errors) {
+                        // Если есть ошибки валидации
+                        const errorList = errorData.errors.map(err => {
+                            const fieldName = err.field || err.fieldName || 'неизвестное поле';
+                            const fieldLabel = fieldName === '_replyto' || fieldName === 'email' ? 'Email' : fieldName;
+                            return `• ${fieldLabel}: ${err.message || 'неверный формат'}`;
+                        }).join('\n');
+                        
+                        errorMessage = `Ошибка валидации:\n\n${errorList}\n\nПожалуйста, проверьте данные и попробуйте снова.`;
+                    } else if (errorData.error) {
+                        errorMessage = `Ошибка: ${errorData.error}`;
+                    }
+                    
+                    alert(errorMessage);
+                    
+                    // Подсвечиваем поле с ошибкой email
+                    if (errorData.errors && errorData.errors.some(e => e.field === '_replyto' || e.field === 'email')) {
+                        const emailField = document.getElementById('email');
+                        if (emailField) {
+                            emailField.style.borderColor = '#ff6b6b';
+                            emailField.focus();
+                            showError(emailField, 'Введите корректный email адрес');
+                        }
+                    }
                 }
             } catch (error) {
                 console.error('Ошибка отправки:', error);
                 alert('Произошла ошибка при отправке формы. Попробуйте еще раз или свяжитесь с нами по телефону.');
-                
+            } finally {
                 // Восстанавливаем кнопку
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
