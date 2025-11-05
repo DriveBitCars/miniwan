@@ -1638,5 +1638,55 @@
       "isAvailable": true
     },
     "id": 38
+  },
+  {
+    "brand": "Kia",
+    "model": "Carnival",
+    "year": 2020,
+    "engine": "2.2",
+    "transmission": "automatic",
+    "fuelType": "Дизель",
+    "seats": 6,
+    "prices": {
+      "1": 8000,
+      "4": 7750,
+      "7": 7500,
+      "14": 7250,
+      "21": 7000
+    },
+    "deposit": 10000,
+    "rentalRules": {
+      "minExperience": 3,
+      "minAge": 21
+    },
+    "isPopular": false,
+    "description": "Состояние новой машины",
+    "features": [],
+    "images": [
+      "images/cars/039-1.jpg",
+      "images/cars/039-2.jpg",
+      "images/cars/039-3.jpg",
+      "images/cars/039-4.jpg",
+      "images/cars/039-5.jpg"
+    ],
+    "video": "videos/039-video.mp4",
+    "owner": {
+      "name": "Александр Бойко",
+      "rating": 5.0,
+      "carsCount": 12,
+      "rentalsCount": 14
+    },
+    "location": "Москва, ул Лобачевского, д 72, Метро Проспект Вернадского",
+    "available": true,
+    "driveType": "Передний",
+    "mileage": "н/д",
+    "includedMileage": "300",
+    "insurance": "ОСАГО",
+    "availability": {
+      "startDate": "2025-11-01",
+      "endDate": "2030-12-30",
+      "isAvailable": true
+    },
+    "id": 39
   }
 ]

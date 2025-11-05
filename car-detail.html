@@ -131,6 +131,12 @@
             height: 100%;
             object-fit: cover;
         }
+        .main-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
         .image-placeholder {
             display: flex;
             align-items: center;
@@ -160,6 +166,65 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        .thumbnail.video-thumbnail {
+            position: relative;
+            overflow: hidden;
+        }
+        .thumbnail.video-thumbnail::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .thumbnail.video-thumbnail:hover::after {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .video-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            background: rgba(139, 90, 43, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .thumbnail.video-thumbnail:hover .video-play-icon {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(139, 90, 43, 1);
+        }
+        .video-play-icon::before {
+            content: '▶';
+            color: #E8DCC5;
+            font-size: 14px;
+            margin-left: 2px;
+        }
+        .video-label {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #E8DCC5;
+            font-size: 9px;
+            text-align: center;
+            padding: 2px 4px;
+            border-radius: 3px;
+            z-index: 2;
         }
         /* Информация об автомобиле */
         .car-info {
@@ -821,15 +886,53 @@
                 mainImage.innerHTML = `<img src="${currentCar.images[0]}" alt="${currentCar.brand} ${currentCar.model}" 
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">`;
                 // Миниатюры
-                thumbnails.innerHTML = currentCar.images.map((image, index) => `
+                let thumbnailsHTML = currentCar.images.map((image, index) => `
                     <div class="thumbnail ${index === 0 ? 'active' : ''}" onclick="changeMainImage(${index})">
                         <img src="${image}" alt="${currentCar.brand} ${currentCar.model} - фото ${index + 1}"
                              onerror="this.style.display='none'; this.parentElement.innerHTML='📷'">
                     </div>
                 `).join('');
+                
+                // Добавляем видео, если есть
+                if (currentCar.video) {
+                    // Используем первое изображение как превью для видео
+                    const videoPreviewImage = currentCar.images && currentCar.images.length > 0 
+                        ? currentCar.images[0] 
+                        : '';
+                    thumbnailsHTML += `
+                        <div class="thumbnail video-thumbnail" onclick="showVideo()">
+                            ${videoPreviewImage ? `<img src="${videoPreviewImage}" alt="Видео" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7);">` : ''}
+                            <div class="video-play-icon"></div>
+                            <div class="video-label">Видео</div>
+                        </div>
+                    `;
+                }
+                
+                thumbnails.innerHTML = thumbnailsHTML;
             } else {
                 mainImage.innerHTML = '<div class="image-placeholder">Нет изображений</div>';
                 thumbnails.innerHTML = '';
+            }
+        }
+        function showVideo() {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            if (currentCar.video) {
+                mainImage.innerHTML = `
+                    <video controls style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+                        <source src="${currentCar.video}" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                `;
+                // Обновляем активную миниатюру
+                thumbnails.forEach((thumb, i) => {
+                    thumb.classList.remove('active');
+                });
+                // Активируем последнюю миниатюру (видео)
+                if (thumbnails.length > 0) {
+                    thumbnails[thumbnails.length - 1].classList.add('active');
+                }
             }
         }
         function changeMainImage(index) {
