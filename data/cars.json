@@ -1744,5 +1744,65 @@
       "endDate": "2030-12-30",
       "isAvailable": true
     }
+  },
+  {
+    "id": 41,
+    "brand": "Citroen",
+    "model": "SpaceTourer",
+    "year": 2021,
+    "engine": "2.0",
+    "transmission": "automatic",
+    "fuelType": "Дизель",
+    "seats": 8,
+    "prices": {
+      "1": 9000,
+      "4": 8500,
+      "7": 8000,
+      "14": 7500,
+      "21": 6500
+    },
+    "deposit": 30000,
+    "rentalRules": {
+      "minExperience": 3,
+      "minAge": 21
+    },
+    "isPopular": false,
+    "description": "Комфортабельный минивэн Citroen SpaceTourer 2021 года в комплектации «Престиж». 7+1 мест, дизельный двигатель 2.0 л и передний привод. Авто отлично подходит для поездок по Москве и области, доступна подача по МКАД. Включено 300 км пробега в сутки, перепробег 15 ₽/км. Залог 30 000 ₽. Возможна аренда с водителем.",
+    "features": [
+      "8 мест",
+      "Комплектация «Престиж»",
+      "Кожаный салон",
+      "Двухзонный климат-контроль",
+      "Сдвижные двери",
+      "КАСКО мультидрайв",
+      "ОСАГО мультидрайв",
+      "Подача по Москве и МО"
+    ],
+    "images": [
+      "images/cars/041-1.jpg",
+      "images/cars/041-2.jpg",
+      "images/cars/041-3.jpg",
+      "images/cars/041-4.jpg",
+      "images/cars/041-5.jpg",
+      "images/cars/041-6.jpg",
+      "images/cars/041-7.jpg"
+    ],
+    "owner": {
+      "name": "Ангелина Потапова",
+      "rating": 5.0,
+      "carsCount": 2,
+      "rentalsCount": 1
+    },
+    "location": "Москва, проспект Мира, д 114 (Алексеевская)",
+    "available": true,
+    "driveType": "Передний",
+    "mileage": "н/д",
+    "includedMileage": "300",
+    "insurance": "КАСКО и ОСАГО (мультидрайв)",
+    "availability": {
+      "startDate": "2025-11-01",
+      "endDate": "2030-12-30",
+      "isAvailable": true
+    }
   }
 ]
