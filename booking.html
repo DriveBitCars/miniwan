@@ -294,6 +294,18 @@
             font-weight: 600;
         }
 
+        .dates-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 12px;
+        }
+        
+        .dates-actions .btn {
+            width: auto;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+        }
+        
         .price-breakdown {
             margin-bottom: 25px;
         }
@@ -403,6 +415,96 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
+        }
+
+        /* Модальное окно выбора дат */
+        .date-edit-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .date-edit-modal.show {
+            display: flex;
+        }
+        
+        .date-edit-modal-content {
+            background: rgba(35, 26, 22, 0.95);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 460px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+            position: relative;
+        }
+        
+        .date-edit-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .date-edit-modal-header h2 {
+            margin: 0;
+            color: #E8DCC5;
+            font-size: 1.4rem;
+        }
+        
+        .date-edit-modal-close {
+            background: none;
+            border: none;
+            color: #E8DCC5;
+            font-size: 28px;
+            cursor: pointer;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .date-edit-description {
+            color: #D4C4A8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .date-edit-grid {
+            display: grid;
+            gap: 16px;
+        }
+        
+        .date-edit-grid .date-input-group input[type="date"] {
+            width: 100%;
+        }
+        
+        .date-edit-summary {
+            margin-top: 20px;
+            padding: 14px 18px;
+            background: rgba(139, 90, 43, 0.12);
+            border: 1px solid rgba(139, 90, 43, 0.4);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #E8DCC5;
+        }
+        
+        .date-edit-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 26px;
+        }
+        
+        .date-edit-actions .btn {
+            flex: 1;
         }
 
         .notification.info {
@@ -677,6 +779,11 @@
                             <span class="date-label">Количество дней:</span>
                             <span class="date-value" id="daysCount">-</span>
                         </div>
+                        <div class="dates-actions">
+                            <button class="btn btn-secondary" type="button" onclick="openDateEditModal()">
+                                Изменить даты
+                            </button>
+                        </div>
                     </div>
 
                     <div class="price-breakdown">
@@ -703,6 +810,36 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="date-edit-modal" id="dateEditModal" onclick="closeDateEditModal()">
+        <div class="date-edit-modal-content" onclick="event.stopPropagation();">
+            <div class="date-edit-modal-header">
+                <h2>Изменить даты аренды</h2>
+                <button class="date-edit-modal-close" type="button" onclick="closeDateEditModal()">×</button>
+            </div>
+            <p class="date-edit-description">
+                Выберите новые даты бронирования. Мы обновим стоимость и информацию в заявке.
+            </p>
+            <div class="date-edit-grid">
+                <div class="date-input-group">
+                    <label for="editStartDate">Дата начала</label>
+                    <input type="date" id="editStartDate" onchange="handleEditStartDateChange()" onblur="handleEditStartDateChange()">
+                </div>
+                <div class="date-input-group">
+                    <label for="editEndDate">Дата окончания</label>
+                    <input type="date" id="editEndDate" onchange="handleEditEndDateChange()" onblur="handleEditEndDateChange()">
+                </div>
+            </div>
+            <div class="date-edit-summary">
+                <span>Длительность аренды</span>
+                <span id="editDurationValue">—</span>
+            </div>
+            <div class="date-edit-actions">
+                <button class="btn btn-secondary" type="button" onclick="closeDateEditModal()">Отмена</button>
+                <button class="btn btn-primary" type="button" onclick="applyEditedDates()">Обновить</button>
             </div>
         </div>
     </div>
@@ -773,6 +910,10 @@
 
         // Расчет количества дней аренды
         function calculateRentalDays() {
+            if (!startDate || !endDate) {
+                rentalDays = 0;
+                return;
+            }
             const start = new Date(startDate);
             const end = new Date(endDate);
             rentalDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
@@ -821,7 +962,7 @@
             // Даты
             document.getElementById('startDateValue').textContent = formatDate(startDate);
             document.getElementById('endDateValue').textContent = formatDate(endDate);
-            document.getElementById('daysCount').textContent = `${rentalDays} дней`;
+            document.getElementById('daysCount').textContent = formatDaysLabel(rentalDays);
 
             // Цены
             const dailyPrice = getCarPrice(currentCar, rentalDays);
@@ -849,6 +990,138 @@
                 month: '2-digit',
                 year: 'numeric'
             });
+        }
+
+        function formatDaysLabel(days) {
+            if (!days || days <= 0) {
+                return '—';
+            }
+            const mod10 = days % 10;
+            const mod100 = days % 100;
+            if (mod10 === 1 && mod100 !== 11) return `${days} день`;
+            if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${days} дня`;
+            return `${days} дней`;
+        }
+
+        function getTodayISO() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            return today.toISOString().split('T')[0];
+        }
+
+        function getNextDateISO(dateString) {
+            const baseDate = dateString ? new Date(dateString) : new Date();
+            baseDate.setDate(baseDate.getDate() + 1);
+            return baseDate.toISOString().split('T')[0];
+        }
+
+        function openDateEditModal() {
+            const modal = document.getElementById('dateEditModal');
+            if (!modal) return;
+
+            const startInput = document.getElementById('editStartDate');
+            const endInput = document.getElementById('editEndDate');
+            const todayISO = getTodayISO();
+
+            startInput.min = todayISO;
+            endInput.min = getNextDateISO(startDate || todayISO);
+
+            startInput.value = startDate || todayISO;
+            endInput.value = endDate && new Date(endDate) > new Date(startInput.value) ? endDate : getNextDateISO(startInput.value);
+
+            updateDateEditPreview();
+
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDateEditModal() {
+            const modal = document.getElementById('dateEditModal');
+            if (!modal) return;
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        function handleEditStartDateChange() {
+            const startInput = document.getElementById('editStartDate');
+            const endInput = document.getElementById('editEndDate');
+            if (!startInput || !endInput) return;
+
+            const todayISO = getTodayISO();
+            if (new Date(startInput.value) < new Date(todayISO)) {
+                startInput.value = todayISO;
+            }
+
+            const minEnd = getNextDateISO(startInput.value);
+            endInput.min = minEnd;
+            if (!endInput.value || new Date(endInput.value) <= new Date(startInput.value)) {
+                endInput.value = minEnd;
+            }
+            updateDateEditPreview();
+        }
+
+        function handleEditEndDateChange() {
+            const startInput = document.getElementById('editStartDate');
+            const endInput = document.getElementById('editEndDate');
+            if (!startInput || !endInput) return;
+
+            if (new Date(endInput.value) <= new Date(startInput.value)) {
+                endInput.value = getNextDateISO(startInput.value);
+            }
+            updateDateEditPreview();
+        }
+
+        function updateDateEditPreview() {
+            const startInput = document.getElementById('editStartDate');
+            const endInput = document.getElementById('editEndDate');
+            const preview = document.getElementById('editDurationValue');
+
+            if (!startInput || !endInput || !preview || !startInput.value || !endInput.value) {
+                if (preview) {
+                    preview.textContent = '—';
+                }
+                return;
+            }
+
+            const start = new Date(startInput.value);
+            const end = new Date(endInput.value);
+            const diffDays = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+            preview.textContent = formatDaysLabel(diffDays);
+        }
+
+        function applyEditedDates() {
+            const startInput = document.getElementById('editStartDate');
+            const endInput = document.getElementById('editEndDate');
+
+            if (!startInput.value || !endInput.value) {
+                alert('Пожалуйста, выберите обе даты.');
+                return;
+            }
+
+            if (new Date(endInput.value) <= new Date(startInput.value)) {
+                alert('Дата окончания должна быть позже даты начала.');
+                return;
+            }
+
+            startDate = startInput.value;
+            endDate = endInput.value;
+
+            calculateRentalDays();
+            if (rentalDays <= 0) {
+                alert('Минимальный срок аренды — 1 день.');
+                return;
+            }
+
+            renderOrderSummary();
+            updateUrlWithDates();
+            closeDateEditModal();
+        }
+
+        function updateUrlWithDates() {
+            const url = new URL(window.location.href);
+            url.searchParams.set('startDate', startDate);
+            url.searchParams.set('endDate', endDate);
+            window.history.replaceState(null, '', url.toString());
         }
 
         // Валидация формы
