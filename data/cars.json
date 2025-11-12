@@ -52,7 +52,7 @@
     "driveType": "Задний",
     "mileage": "н/д",
     "includedMileage": "250",
-    "insurance": "ОСАГО (Мультидрайв)",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -113,7 +113,7 @@
     "driveType": "Задний",
     "mileage": "н/д",
     "includedMileage": "300",
-    "insurance": "ОСАГО (Мультидрайв)",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -175,7 +175,7 @@
     "driveType": "Задний",
     "mileage": "н/д",
     "includedMileage": "300",
-    "insurance": "ОСАГО (Мультидрайв)",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -1108,7 +1108,7 @@
     "driveType": "Полный",
     "mileage": "н/д",
     "includedMileage": "250",
-    "insurance": "ОСАГО (Мультидрайв)",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-10-01",
       "endDate": "2030-12-30",
@@ -1174,7 +1174,7 @@
     "driveType": "Полный",
     "mileage": "н/д",
     "includedMileage": "250",
-    "insurance": "ОСАГО (Мультидрайв)",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-10-01",
       "endDate": "2030-12-30",
@@ -1309,7 +1309,7 @@
     "driveType": "Задний",
     "mileage": "н/д",
     "includedMileage": "200",
-    "insurance": "ОСАГО (Мультидрайв)",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-10-01",
       "endDate": "2030-12-30",
@@ -1362,7 +1362,7 @@
     "driveType": "Задний",
     "mileage": "н/д",
     "includedMileage": "200",
-    "insurance": "ОСАГО мультидрайв",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -1416,7 +1416,7 @@
     "driveType": "Передний",
     "mileage": "н/д",
     "includedMileage": "200",
-    "insurance": "КАСКО впишу в полис",
+    "insurance": "КАСКО",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -1470,7 +1470,7 @@
     "driveType": "Задний",
     "mileage": "н/д",
     "includedMileage": "200",
-    "insurance": "ОСАГО мультидрайв",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -1524,7 +1524,7 @@
     "driveType": "Задний",
     "mileage": "н/д",
     "includedMileage": "200",
-    "insurance": "ОСАГО мультидрайв",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -1578,7 +1578,7 @@
     "driveType": "Передний",
     "mileage": "н/д",
     "includedMileage": "200",
-    "insurance": "ОСАГО впишу в полис",
+    "insurance": "ОСАГО",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -1631,7 +1631,7 @@
     "driveType": "Задний",
     "mileage": "н/д",
     "includedMileage": "200",
-    "insurance": "ОСАГО мультидрайв",
+    "insurance": "ОСАГО Мультидрайв",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -1738,7 +1738,7 @@
     "driveType": "Передний",
     "mileage": "н/д",
     "includedMileage": "250",
-    "insurance": "ОСАГО (вписываю в полис)",
+    "insurance": "ОСАГО",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
@@ -1798,7 +1798,7 @@
     "driveType": "Передний",
     "mileage": "н/д",
     "includedMileage": "300",
-    "insurance": "КАСКО и ОСАГО (мультидрайв)",
+    "insurance": "КАСКО",
     "availability": {
       "startDate": "2025-11-01",
       "endDate": "2030-12-30",
