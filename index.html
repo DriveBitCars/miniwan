@@ -681,6 +681,241 @@
                 gap: 12px;
             }
         }
+        
+        /* Стили для GigaChat поиска */
+        .gigachat-search-btn {
+            position: fixed;
+            bottom: 180px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .gigachat-search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        .gigachat-search-btn.listening {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        .gigachat-icon {
+            font-size: 20px;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(245, 87, 108, 0.8);
+            }
+        }
+        
+        /* Индикаторы */
+        .gigachat-listening-indicator,
+        .gigachat-processing-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(35, 26, 22, 0.95);
+            padding: 30px 40px;
+            border-radius: 15px;
+            z-index: 10000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 2px solid #8B5A2B;
+        }
+        .gigachat-listening-indicator p,
+        .gigachat-processing-indicator p {
+            color: #E8DCC5;
+            font-size: 18px;
+            margin: 0;
+        }
+        .pulse {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #f5576c;
+            animation: pulse-ring 1.5s ease-out infinite;
+        }
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #443A30;
+            border-top-color: #8B5A2B;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Модальное окно результатов */
+        .gigachat-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            overflow-y: auto;
+        }
+        .gigachat-modal-content {
+            background: #231A16;
+            max-width: 1200px;
+            margin: 50px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+        .gigachat-modal-header {
+            background: rgba(139, 90, 43, 0.2);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #443A30;
+        }
+        .gigachat-modal-header h2 {
+            color: #E8DCC5;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .gigachat-modal-close {
+            background: none;
+            border: none;
+            color: #E8DCC5;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .gigachat-modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .gigachat-modal-body {
+            padding: 30px;
+        }
+        .gigachat-query {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(139, 90, 43, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #8B5A2B;
+        }
+        .gigachat-query strong {
+            color: #E8DCC5;
+        }
+        .gigachat-query span {
+            color: #D4C4A8;
+            font-style: italic;
+        }
+        .gigachat-reason {
+            color: #D4C4A8;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+        .gigachat-results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .gigachat-car-card {
+            background: rgba(40, 30, 25, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        .gigachat-car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .gigachat-car-image {
+            height: 200px;
+            background: #5D4037;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .gigachat-car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gigachat-car-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .gigachat-car-info h3 {
+            color: #E8DCC5;
+            margin: 0 0 8px 0;
+            font-size: 1.1rem;
+        }
+        .gigachat-car-info p {
+            color: #D4C4A8;
+            margin: 5px 0;
+            font-size: 0.85rem;
+        }
+        .gigachat-car-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8B5A2B;
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            .gigachat-search-btn {
+                bottom: 160px;
+                right: 15px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            .gigachat-modal-content {
+                margin: 20px;
+                border-radius: 10px;
+            }
+            .gigachat-results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1081,6 +1316,14 @@
     // Инициализируем при загрузке страницы
     document.addEventListener('DOMContentLoaded', initTestimonials);
 </script>
+ 
+    <!-- GigaChat Voice Search -->
+    <button id="gigachatSearchBtn" class="gigachat-search-btn" title="Голосовой поиск с GigaChat">
+        <span class="gigachat-icon">🤖</span> GigaChat Поиск
+    </button>
+    
+    <script src="js/gigachat-config.js"></script>
+    <script src="js/gigachat-search.js"></script>
 </body>
 </html>
 
