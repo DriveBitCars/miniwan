@@ -22,10 +22,12 @@
 
 ### 2. Настройка OAuth2 Credentials
 
-✅ **Credentials уже настроены в `js/gigachat-config.js`:**
-- `clientId`: 019a93c0-331a-7505-804a-9d79be86e49b
-- `scope`: GIGACHAT_API_PERS
-- `clientSecret`: (настроен)
+⚠️ **Credentials необходимо настроить в `js/gigachat-config.js`:**
+- Получите `clientId` и `clientSecret` на https://developers.sber.ru/gigachat
+- Установите значения в `js/gigachat-config.js`:
+  - `clientId`: 'YOUR_CLIENT_ID'
+  - `scope`: 'GIGACHAT_API_PERS'
+  - `clientSecret`: 'YOUR_CLIENT_SECRET'
 
 Система автоматически получает access token через OAuth2 при первом запросе и кэширует его.
 

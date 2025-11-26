@@ -26,8 +26,8 @@ npm install express cors dotenv
 ### 2. Создание файла `.env`
 
 ```env
-GIGACHAT_CLIENT_ID=019a93c0-331a-7505-804a-9d79be86e49b
-GIGACHAT_CLIENT_SECRET=MDE5YTkzYzAtMzMxYS03NTA1LTgwNGEtOWQ3OWJlODZlNDliOmM3ZDRlNWZkLTUyZGMtNGVjYi1iN2JjLTA5ZTI0Njc0MTE5Ng==
+GIGACHAT_CLIENT_ID=YOUR_CLIENT_ID
+GIGACHAT_CLIENT_SECRET=YOUR_CLIENT_SECRET
 GIGACHAT_SCOPE=GIGACHAT_API_PERS
 PORT=3000
 ```
@@ -141,8 +141,8 @@ def get_access_token():
     if cached_token and token_expires_at and datetime.now() < token_expires_at:
         return cached_token
     
-    client_id = os.getenv('GIGACHAT_CLIENT_ID', '019a93c0-331a-7505-804a-9d79be86e49b')
-    client_secret = os.getenv('GIGACHAT_CLIENT_SECRET', 'MDE5YTkzYzAtMzMxYS03NTA1LTgwNGEtOWQ3OWJlODZlNDliOmM3ZDRlNWZkLTUyZGMtNGVjYi1iN2JjLTA5ZTI0Njc0MTE5Ng==')
+    client_id = os.getenv('GIGACHAT_CLIENT_ID')  # Обязательно установите в переменных окружения
+    client_secret = os.getenv('GIGACHAT_CLIENT_SECRET')  # Обязательно установите в переменных окружения
     scope = os.getenv('GIGACHAT_SCOPE', 'GIGACHAT_API_PERS')
     
     credentials = base64.b64encode(f'{client_id}:{client_secret}'.encode()).decode()

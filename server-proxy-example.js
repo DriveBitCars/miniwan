@@ -34,8 +34,12 @@ async function getAccessToken() {
         return cachedToken;
     }
 
-    const GIGACHAT_CLIENT_ID = process.env.GIGACHAT_CLIENT_ID || '019a93c0-331a-7505-804a-9d79be86e49b';
-    const GIGACHAT_CLIENT_SECRET = process.env.GIGACHAT_CLIENT_SECRET || 'MDE5YTkzYzAtMzMxYS03NTA1LTgwNGEtOWQ3OWJlODZlNDliOmM3ZDRlNWZkLTUyZGMtNGVjYi1iN2JjLTA5ZTI0Njc0MTE5Ng==';
+    const GIGACHAT_CLIENT_ID = process.env.GIGACHAT_CLIENT_ID;
+    const GIGACHAT_CLIENT_SECRET = process.env.GIGACHAT_CLIENT_SECRET;
+    
+    if (!GIGACHAT_CLIENT_ID || !GIGACHAT_CLIENT_SECRET) {
+        throw new Error('GIGACHAT_CLIENT_ID и GIGACHAT_CLIENT_SECRET должны быть установлены в переменных окружения');
+    }
     const GIGACHAT_SCOPE = process.env.GIGACHAT_SCOPE || 'GIGACHAT_API_PERS';
 
     const credentials = Buffer.from(`${GIGACHAT_CLIENT_ID}:${GIGACHAT_CLIENT_SECRET}`).toString('base64');
